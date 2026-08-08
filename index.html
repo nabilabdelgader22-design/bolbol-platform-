@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>منصة بلبل التعليمية | حيث يغرد العلم</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * {
@@ -19,6 +19,7 @@
             line-height: 1.6;
             text-align: center;
             overflow-x: hidden;
+            scroll-behavior: smooth;
         }
 
         header {
@@ -277,6 +278,49 @@
             color: #ffffff;
         }
 
+        /* تنسيقات قسم الإهداء الخاص */
+        .dedication-section {
+            background: #080808;
+            border: 2px solid #F5C542;
+            border-radius: 20px;
+            padding: 40px 20px;
+            margin: 40px auto;
+            max-width: 850px;
+            text-align: center;
+            box-shadow: 0 0 30px rgba(245, 197, 66, 0.2);
+        }
+        .dedication-intro {
+            color: #e2e8f0;
+            font-size: 1.25rem;
+            margin-bottom: 10px;
+        }
+        .dedication-gold-name {
+            color: #F5C542;
+            font-family: 'Amiri', serif;
+            font-size: 2.2rem;
+            font-weight: 700;
+            line-height: 1.4;
+        }
+        .dedication-divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #F5C542, transparent);
+            margin: 25px auto;
+            width: 70%;
+        }
+        .dedication-list {
+            list-style: none;
+            padding: 0;
+            margin-top: 15px;
+        }
+        .dedication-list li {
+            font-size: 1.8rem;
+            margin: 12px 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
         footer {
             background: #0b1120;
             padding: 20px 15px;
@@ -311,6 +355,9 @@
         <div class="slide">
             <div class="slide-icon"><i class="fas fa-user-graduate"></i></div>
             <div class="slide-text">👨‍🏫 إشراف وتأسيس الأستاذ: Nabil Abdelgadir.. نرافقكم خطوة بخطوة نحو قمة النجاح والإبداع.</div>
+            <div style="margin-top: 12px;">
+                <a href="#dedication" style="background: #F5C542; color: #000; padding: 6px 16px; border-radius: 20px; text-decoration: none; font-weight: bold; font-size: 0.9rem; display: inline-block;"><i class="fas fa-heart" style="color: #ef4444;"></i> الانتقال للإهداء الخاص</a>
+            </div>
         </div>
     </div>
 
@@ -359,7 +406,7 @@
             <div class="card" style="text-align: right;">
                 <div>
                     <h3>مذكرات وأوراق عمل الرياضيات</h3>
-                    <p>تمارين واختبارات قصيرة ومسائل متنوعة لتثبيت مفاهيم الرياضيات والامتحانات.</p>
+                    <p>تمارين وااختبارات قصيرة ومسائل متنوعة لتثبيت مفاهيم الرياضيات والامتحانات.</p>
                 </div>
                 <div class="card-buttons">
                     <a href="https://drive.google.com/drive/folders/1AaSlbtMtTzKeeAa0ODKOV_LdBTnTdWhm" target="_blank" class="download-btn browse-btn"><i class="fas fa-book-open"></i> تصفح المذكرات</a>
@@ -504,6 +551,24 @@
         </div>
     </section>
 
+    <!-- قسم الإهداء الخاص والملكي -->
+    <section id="dedication">
+        <div class="dedication-section">
+            <p class="dedication-intro">إهداءٌ إلى نبع الحنان.. أمي الغالية</p>
+            <h1 class="dedication-gold-name">نفيسة محمود أحمد حاج</h1>
+
+            <div class="dedication-divider"></div>
+
+            <p class="dedication-intro">وإلى قرّة العين والروح.. أبنائي الأحباء:</p>
+            
+            <ul class="dedication-list">
+                <li><span style="font-size: 1.3rem;">⭐</span> <span class="dedication-gold-name">غلا نبيل عبدالقادر</span></li>
+                <li><span style="font-size: 1.3rem;">⭐</span> <span class="dedication-gold-name">حلا نبيل عبدالقادر</span></li>
+                <li><span style="font-size: 1.3rem;">⭐</span> <span class="dedication-gold-name">عبدالقادر نبيل عبدالقادر</span></li>
+            </ul>
+        </div>
+    </section>
+
     <footer>
         <p>جميع الحقوق محفوظة © منصة بلبل التعليمية (حيث يغرد العلم) | إعداد: Nabil Abdelgadir</p>
     </footer>
@@ -526,3 +591,4 @@
     </script>
 </body>
 </html>
+
