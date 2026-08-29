@@ -229,6 +229,8 @@
             transition: transform 0.2s, background 0.3s;
             white-space: nowrap;
             box-sizing: border-box;
+            border: none;
+            cursor: pointer;
         }
         .browse-btn {
             background-color: #fbbf24;
@@ -273,6 +275,61 @@
         .email-link:hover {
             background: #ef4444;
             color: #ffffff;
+        }
+
+        /* تنسيقات قسم التحديات التفاعلية */
+        .quiz-container {
+            background: #1e293b;
+            border: 2px solid #fbbf24;
+            border-radius: 16px;
+            padding: 25px 15px;
+            margin-top: 20px;
+            text-align: center;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+        }
+        .hidden { display: none !important; }
+        
+        .quiz-input {
+            width: 100%;
+            max-width: 350px;
+            padding: 12px 15px;
+            border: 2px solid #334155;
+            border-radius: 8px;
+            background-color: #0f172a;
+            color: #ffffff;
+            font-size: 1rem;
+            margin: 15px 0;
+            outline: none;
+            text-align: center;
+        }
+        .quiz-input:focus { border-color: #fbbf24; }
+
+        .options-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin: 20px 0;
+        }
+        .option-btn {
+            background: #0f172a;
+            border: 2px solid #334155;
+            color: #ffffff;
+            padding: 14px;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            text-align: center;
+        }
+        .option-btn:hover {
+            border-color: #fbbf24;
+            background: #1e293b;
+        }
+        .option-btn.selected {
+            background-color: rgba(34, 197, 94, 0.2);
+            border-color: #22c55e;
+            color: #4ade80;
         }
 
         .dedication-section {
@@ -368,6 +425,36 @@
         </div>
     </section>
 
+    <!-- قسم الاختيارات والتحديات التفاعلية (الجديد) -->
+    <section id="quiz-section">
+        <h2 class="section-title"><i class="fas fa-vial"></i> التحديات والاختبارات التفاعلية</h2>
+        <div class="quiz-container">
+            <!-- شاشة البداية -->
+            <div id="start-screen">
+                <h3 style="color: #fbbf24; font-size: 1.5rem; margin-bottom: 10px;">اختبار الرياضيات التفاعلي</h3>
+                <p style="color: #cbd5e1;">اختبر معلوماتك في مادة الرياضيات وحقق أعلى نتيجة!</p>
+                <input type="text" id="student-name" class="quiz-input" placeholder="اكتب اسمك الثلاثي هنا لبدء التحدي...">
+                <br>
+                <button onclick="startQuiz()" class="download-btn browse-btn" style="max-width: 250px; margin: auto;"><i class="fas fa-play"></i> بدء التحدي الآن</button>
+            </div>
+
+            <!-- شاشة الأسئلة -->
+            <div id="quiz-screen" class="hidden">
+                <h3 id="question-text" style="color: #ffffff; font-size: 1.3rem; margin-bottom: 20px;"></h3>
+                <div id="options-container" class="options-grid"></div>
+                <button id="next-btn" onclick="nextQuestion()" class="download-btn success-btn" disabled style="max-width: 250px; margin: auto;"><i class="fas fa-arrow-left"></i> السؤال التالي</button>
+            </div>
+
+            <!-- شاشة النتيجة -->
+            <div id="result-screen" class="hidden">
+                <i class="fas fa-trophy" style="font-size: 3.5rem; color: #fbbf24; margin-bottom: 15px;"></i>
+                <h3 style="color: #fbbf24; font-size: 1.6rem;">أحسنت التحدي!</h3>
+                <p id="result-text" style="font-size: 1.2rem; color: #ffffff; margin: 15px 0;"></p>
+                <button onclick="resetQuiz()" class="download-btn browse-btn" style="max-width: 250px; margin: auto;"><i class="fas fa-redo"></i> إعادة الاختبار</button>
+            </div>
+        </div>
+    </section>
+
     <section>
         <h2 class="section-title">المواد التعليمية الأساسية</h2>
         <div class="card-grid">
@@ -389,7 +476,6 @@
     <section>
         <h2 class="section-title"><i class="fas fa-file-alt"></i> مذكرات وأوراق العمل</h2>
         <div class="card-grid">
-            <!-- 1. مذكرات وأوراق الفيزياء -->
             <div class="card" style="text-align: right;">
                 <div>
                     <h3>مذكرات وأوراق عمل الفيزياء</h3>
@@ -400,11 +486,10 @@
                     <a href="https://drive.google.com/drive/folders/15F3QOP2t8RAFHRV4yYzqvx04vUuHl40E" target="_blank" class="download-btn success-btn"><i class="fas fa-download"></i> تحميل المذكرات</a>
                 </div>
             </div>
-            <!-- 2. مذكرات وأوراق الرياضيات -->
             <div class="card" style="text-align: right;">
                 <div>
                     <h3>مذكرات وأوراق عمل الرياضيات</h3>
-                    <p>تمارين واختبارات قصيرة ومسائل متنوعة لتثبيت مفاهيم الرياضيات والامتحانات.</p>
+                    <p>تمارين وااختبارات قصيرة ومسائل متنوعة لتثبيت مفاهيم الرياضيات والامتحانات.</p>
                 </div>
                 <div class="card-buttons">
                     <a href="https://drive.google.com/drive/folders/1xuCEOYAt6dFokR-DQ0KDKXmn-Yn2ifg5" target="_blank" class="download-btn browse-btn"><i class="fas fa-book-open"></i> تصفح المذكرات</a>
@@ -417,7 +502,6 @@
     <section>
         <h2 class="section-title"><i class="fas fa-book"></i> مكتبة الكتب المدرسية (جميع المراحل)</h2>
         <div class="card-grid">
-            <!-- 3. كتب مرحلة الأساس -->
             <div class="card" style="text-align: right;">
                 <div>
                     <h3>كتب مرحلة الأساس</h3>
@@ -429,7 +513,6 @@
                 </div>
             </div>
 
-            <!-- 4. مطبوعات وأوراق عمل الأساس -->
             <div class="card" style="text-align: right;">
                 <div>
                     <h3>مطبوعات وأوراق عمل الأساس</h3>
@@ -441,7 +524,6 @@
                 </div>
             </div>
             
-            <!-- 5. كتب المرحلة المتوسطة -->
             <div class="card" style="text-align: right;">
                 <div>
                     <h3>كتب المرحلة المتوسطة</h3>
@@ -453,7 +535,6 @@
                 </div>
             </div>
 
-            <!-- 6. مطبوعات وأوراق عمل المرحلة المتوسطة -->
             <div class="card" style="text-align: right;">
                 <div>
                     <h3>مطبوعات وأوراق عمل المرحلة المتوسطة</h3>
@@ -465,7 +546,6 @@
                 </div>
             </div>
 
-            <!-- 7. كتب المرحلة الثانوية -->
             <div class="card" style="text-align: right;">
                 <div>
                     <h3>كتب المرحلة الثانوية</h3>
@@ -477,7 +557,6 @@
                 </div>
             </div>
 
-            <!-- 8. مطبوعات وأوراق عمل المرحلة الثانوية -->
             <div class="card" style="text-align: right;">
                 <div>
                     <h3>مطبوعات وأوراق عمل المرحلة الثانوية</h3>
@@ -611,6 +690,7 @@
     </footer>
 
     <script>
+        // سكريبت السلايدر
         let slideIndex = 0;
         const slides = document.querySelectorAll('.slide');
         
@@ -624,6 +704,91 @@
         
         if(slides.length > 0) {
             setInterval(showSlides, 4500);
+        }
+
+        // سكريبت الاختبار التفاعلي
+        const questions = [
+            {
+                question: "ما هي مجموعة تعريف الدالة د(س) = 1 / (س - 3)؟",
+                options: ["ح", "ح - {3}", "ح - {-3}", "[3, ∞)"],
+                correct: 1
+            },
+            {
+                question: "ما هي قيمة س التي تجعل الدالة غير معرفة: د(س) = 5 / (س + 2)؟",
+                options: ["2", "-2", "0", "5"],
+                correct: 1
+            }
+        ];
+
+        let currentQuestionIndex = 0;
+        let score = 0;
+        let studentName = "";
+        let selectedOptionIndex = null;
+
+        function startQuiz() {
+            const nameInput = document.getElementById("student-name").value.trim();
+            if (!nameInput) return;
+            studentName = nameInput;
+            document.getElementById("start-screen").classList.add("hidden");
+            document.getElementById("quiz-screen").classList.remove("hidden");
+            showQuestion();
+        }
+
+        function showQuestion() {
+            selectedOptionIndex = null;
+            document.getElementById("next-btn").disabled = true;
+            const q = questions[currentQuestionIndex];
+            document.getElementById("question-text").innerText = `السؤال ${currentQuestionIndex + 1} من ${questions.length}: ${q.question}`;
+            
+            const optionsContainer = document.getElementById("options-container");
+            optionsContainer.innerHTML = "";
+
+            q.options.forEach((opt, index) => {
+                const btn = document.createElement("button");
+                btn.className = "option-btn";
+                btn.innerText = opt;
+                btn.onclick = () => selectOption(index);
+                optionsContainer.appendChild(btn);
+            });
+        }
+
+        function selectOption(index) {
+            selectedOptionIndex = index;
+            const buttons = document.querySelectorAll(".option-btn");
+            buttons.forEach((btn, idx) => {
+                if (idx === index) {
+                    btn.classList.add("selected");
+                } else {
+                    btn.classList.remove("selected");
+                }
+            });
+            document.getElementById("next-btn").disabled = false;
+        }
+
+        function nextQuestion() {
+            if (selectedOptionIndex === questions[currentQuestionIndex].correct) {
+                score++;
+            }
+            currentQuestionIndex++;
+            if (currentQuestionIndex < questions.length) {
+                showQuestion();
+            } else {
+                showResult();
+            }
+        }
+
+        function showResult() {
+            document.getElementById("quiz-screen").classList.add("hidden");
+            document.getElementById("result-screen").classList.remove("hidden");
+            document.getElementById("result-text").innerText = `عزيزي الطالب (${studentName})، لقد حصلت على ${score} من ${questions.length}`;
+        }
+
+        function resetQuiz() {
+            currentQuestionIndex = 0;
+            score = 0;
+            document.getElementById("result-screen").classList.add("hidden");
+            document.getElementById("start-screen").classList.remove("hidden");
+            document.getElementById("student-name").value = "";
         }
     </script>
 </body>
