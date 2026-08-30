@@ -1,4 +1,7 @@
-// بنك الأسئلة التفاعلي الشامل (20 سؤالاً من مقرر الدوال) //
+// ==========================================
+// بنك الأسئلة التفاعلي الشامل (مقرر الدوال)
+// ==========================================
+
 const questions = [
     {
         question: "إذا كانت د(س) = 3س + 6، فإن صورة العنصر 3 أي د(3) تساوي:",
@@ -6,23 +9,28 @@ const questions = [
         correct: 0
     },
     {
-        question: "إذا كانت هـ(س - 1) = س2، فإن هـ(-2) تساوي:",
+        question: "إذا كانت هـ(س - 1) = س²، فإن هـ(-2) تساوي:",
         options: ["-1", "1", "3", "-3"],
         correct: 1
     },
     {
         question: "إذا كانت الدالة د: ح ← ح حيث د(س) = 2س + 1، فإن المجال والمجال المقابل هما:",
-        options: ["مجموعة الأعداد الطبيعية ط، مجموعة الأعداد الصحيحة ص", "مجموعة الأعداد الحقيقية ح، مجموعة الأعداد الحقيقية ح", "مجموعة الأعداد النسبية ن، مجموعة الأعداد الحقيقية ح", "مجموعة الأعداد الصحيحة ص، مجموعة الأعداد الطبيعية ط"],
+        options: [
+            "مجموعة الأعداد الطبيعية ط، مجموعة الأعداد الصحيحة ص", 
+            "مجموعة الأعداد الحقيقية ح، مجموعة الأعداد الحقيقية ح", 
+            "مجموعة الأعداد النسبية ن، مجموعة الأعداد الحقيقية ح", 
+            "مجموعة الأعداد الصحيحة ص، مجموعة الأعداد الطبيعية ط"
+        ],
         correct: 1
     },
     {
-        question: "إذا كانت د(س) = س2 + 5، فإن صورة العدد 2 وفق هذه الدالة هي:",
-        options: ["10", "13", "14", "6"],
+        question: "إذا كانت د(س) = س² + 5، فإن صورة العدد 2 وفق هذه الدالة هي:",
+        options: ["10", "9", "14", "6"],
         correct: 1
     },
     {
-        question: "إذا كانت د(س) = س3 + 7، فإن صورة العدد -3 تساوي:",
-        options: ["-2", "2", "-9", "16"],
+        question: "إذا كانت د(س) = س³ + 7، فإن صورة العدد -3 تساوي:",
+        options: ["-20", "2", "-9", "16"],
         correct: 0
     }
 ];
@@ -31,28 +39,58 @@ let currentQuestionIndex = 0;
 let score = 0;
 let selectedOptionIndex = null;
 
+// دالة لبدء الاختبار عند النقر على زر التحدي
+function startQuiz() {
+    const startBtn = document.getElementById("start-quiz-btn");
+    const quizScreen = document.getElementById("quiz-screen");
+    
+    if (startBtn) {
+        startBtn.style.display = "none";
+    }
+    if (quizScreen) {
+        quizScreen.classList.remove("hidden");
+    }
+    
+    resetQuiz();
+}
+
+// عرض السؤال الحالي مع الخيارات
 function showQuestion() {
     resetState();
     let currentQuestion = questions[currentQuestionIndex];
-    document.getElementById("question-text").innerText = (currentQuestionIndex + 1) + ". " + currentQuestion.question;
+    
+    const questionText = document.getElementById("question-text");
+    if (questionText) {
+        questionText.innerText = (currentQuestionIndex + 1) + ". " + currentQuestion.question;
+    }
     
     let optionsContainer = document.getElementById("options-container");
-    currentQuestion.options.forEach((option, index) => {
-        let btn = document.createElement("button");
-        btn.innerText = option;
-        btn.classList.add("option-btn");
-        btn.onclick = () => selectOption(index);
-        optionsContainer.appendChild(btn);
-    });
+    if (optionsContainer) {
+        currentQuestion.options.forEach((option, index) => {
+            let btn = document.createElement("button");
+            btn.innerText = option;
+            btn.classList.add("option-btn");
+            btn.onclick = () => selectOption(index);
+            optionsContainer.appendChild(btn);
+        });
+    }
 }
 
+// إعادة تصفير حالة السؤال القائم
 function resetState() {
     selectedOptionIndex = null;
     let optionsContainer = document.getElementById("options-container");
-    optionsContainer.innerHTML = "";
-    document.getElementById("next-btn").disabled = true;
+    if (optionsContainer) {
+        optionsContainer.innerHTML = "";
+    }
+    
+    let nextBtn = document.getElementById("next-btn");
+    if (nextBtn) {
+        nextBtn.disabled = true;
+    }
 }
 
+// اختيار إجابة من القائمة
 function selectOption(index) {
     selectedOptionIndex = index;
     let buttons = document.querySelectorAll(".option-btn");
@@ -63,9 +101,14 @@ function selectOption(index) {
             btn.classList.remove("selected");
         }
     });
-    document.getElementById("next-btn").disabled = false;
+    
+    let nextBtn = document.getElementById("next-btn");
+    if (nextBtn) {
+        nextBtn.disabled = false;
+    }
 }
 
+// الانتقال للسؤال التالي
 function nextQuestion() {
     if (selectedOptionIndex === questions[currentQuestionIndex].correct) {
         score++;
@@ -78,37 +121,46 @@ function nextQuestion() {
     }
 }
 
+// عرض شاشة النتيجة النهائية
 function showResult() {
-    document.getElementById("quiz-screen").classList.add("hidden");
-    document.getElementById("result-screen").classList.remove("hidden");
-    document.getElementById("result-text").innerText = "لقد أتممت الاختبار بنجاح! نتيجتك هي: " + score + " من " + questions.length;
+    let quizScreen = document.getElementById("quiz-screen");
+    let resultScreen = document.getElementById("result-screen");
+    
+    if (quizScreen) {
+        quizScreen.classList.add("hidden");
+    }
+    if (resultScreen) {
+        resultScreen.classList.remove("hidden");
+        let resultText = document.getElementById("result-text");
+        if (resultText) {
+            resultText.innerText = "لقد أتممت الاختبار بنجاح! نتيجتك هي: " + score + " من " + questions.length;
+        }
+    }
 }
 
+// إعادة تشغيل الاختبار من البداية
 function resetQuiz() {
     currentQuestionIndex = 0;
     score = 0;
-    document.getElementById("result-screen").classList.add("hidden");
-    document.getElementById("quiz-screen").classList.remove("hidden");
-    showQuestion();
-}
-
-if (document.getElementById("question-text")) {
-    showQuestion();
-}
-
-// سكريبت العرض التقديمي (السلايدر)
-let slideIndex = 0;
-const slides = document.querySelectorAll(".slide");
-
-function showSlides() {
-    if (slides.length > 0) {
-        slides.forEach(s => s.style.display = "none");
-        slideIndex++;
-        if (slideIndex > slides.length) { slideIndex = 1; }
-        slides[slideIndex - 1].style.display = "block";
-        setTimeout(showSlides, 4500);
+    let resultScreen = document.getElementById("result-screen");
+    let quizScreen = document.getElementById("quiz-screen");
+    
+    if (resultScreen) {
+        resultScreen.classList.add("hidden");
     }
+    if (quizScreen) {
+        quizScreen.classList.remove("hidden");
+    }
+    showQuestion();
 }
-if (slides.length > 0) {
-    showSlides();
-}
+
+// تهيئة الصفحة عند التحميل التلقائي
+document.addEventListener("DOMContentLoaded", () => {
+    const questionText = document.getElementById("question-text");
+    const startBtn = document.getElementById("start-quiz-btn");
+    
+    // تشغيل مباشر فقط في حال كانت صفحة اختبار مستقلة ولا تحتوي على زر بدء التحدي
+    if (questionText && !startBtn) {
+        showQuestion();
+    }
+});
