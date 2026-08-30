@@ -109,22 +109,16 @@ let currentQuestionIndex = 0;
 let score = 0;
 let selectedOptionIndex = null;
 
-// دالة لبدء الاختبار عند النقر على زر التحدي
 function startQuiz() {
     const startBtn = document.getElementById("start-quiz-btn");
     const quizScreen = document.getElementById("quiz-screen");
     
-    if (startBtn) {
-        startBtn.style.display = "none";
-    }
-    if (quizScreen) {
-        quizScreen.classList.remove("hidden");
-    }
+    if (startBtn) startBtn.style.display = "none";
+    if (quizScreen) quizScreen.classList.remove("hidden");
     
     resetQuiz();
 }
 
-// عرض السؤال الحالي مع الخيارات
 function showQuestion() {
     resetState();
     let currentQuestion = questions[currentQuestionIndex];
@@ -146,39 +140,39 @@ function showQuestion() {
     }
 }
 
-// إعادة تصفير حالة السؤال القائم
 function resetState() {
     selectedOptionIndex = null;
     let optionsContainer = document.getElementById("options-container");
-    if (optionsContainer) {
-        optionsContainer.innerHTML = "";
-    }
+    if (optionsContainer) optionsContainer.innerHTML = "";
     
     let nextBtn = document.getElementById("next-btn");
-    if (nextBtn) {
-        nextBtn.disabled = true;
-    }
+    if (nextBtn) nextBtn.disabled = true;
 }
 
-// اختيار إجابة من القائمة
+// تلوين الإجابات وتوضيح الصحيح منها للطالب مباشرة
 function selectOption(index) {
+    if (selectedOptionIndex !== null) return; // منع التعديل بعد الاختيار
+
     selectedOptionIndex = index;
+    let correctIndex = questions[currentQuestionIndex].correct;
     let buttons = document.querySelectorAll(".option-btn");
+
     buttons.forEach((btn, idx) => {
-        if (idx === index) {
-            btn.classList.add("selected");
-        } else {
-            btn.classList.remove("selected");
+        btn.disabled = true; // تعطيل بقية الأزرار
+        if (idx === correctIndex) {
+            btn.style.backgroundColor = "#2e7d32"; // أخضر للإجابة الصحيحة
+            btn.style.color = "#ffffff";
+        }
+        if (idx === index && index !== correctIndex) {
+            btn.style.backgroundColor = "#c62828"; // أحمر للإجابة الخاطئة
+            btn.style.color = "#ffffff";
         }
     });
-    
+
     let nextBtn = document.getElementById("next-btn");
-    if (nextBtn) {
-        nextBtn.disabled = false;
-    }
+    if (nextBtn) nextBtn.disabled = false;
 }
 
-// الانتقال للسؤال التالي
 function nextQuestion() {
     if (selectedOptionIndex === questions[currentQuestionIndex].correct) {
         score++;
@@ -191,14 +185,11 @@ function nextQuestion() {
     }
 }
 
-// عرض شاشة النتيجة النهائية
 function showResult() {
     let quizScreen = document.getElementById("quiz-screen");
     let resultScreen = document.getElementById("result-screen");
     
-    if (quizScreen) {
-        quizScreen.classList.add("hidden");
-    }
+    if (quizScreen) quizScreen.classList.add("hidden");
     if (resultScreen) {
         resultScreen.classList.remove("hidden");
         let resultText = document.getElementById("result-text");
@@ -208,19 +199,14 @@ function showResult() {
     }
 }
 
-// إعادة تشغيل الاختبار من البداية
 function resetQuiz() {
     currentQuestionIndex = 0;
     score = 0;
     let resultScreen = document.getElementById("result-screen");
     let quizScreen = document.getElementById("quiz-screen");
     
-    if (resultScreen) {
-        resultScreen.classList.add("hidden");
-    }
-    if (quizScreen) {
-        quizScreen.classList.remove("hidden");
-    }
+    if (resultScreen) resultScreen.classList.add("hidden");
+    if (quizScreen) quizScreen.classList.remove("hidden");
     showQuestion();
 }
 
@@ -246,10 +232,8 @@ function showSlides() {
 // ==========================================
 
 document.addEventListener("DOMContentLoaded", () => {
-    // تشغيل العرض التقديمي (السلايدر)
     showSlides();
 
-    // تشغيل الاختبار المباشر فقط في حال عدم وجود زر بدء التحدي
     const questionText = document.getElementById("question-text");
     const startBtn = document.getElementById("start-quiz-btn");
     if (questionText && !startBtn) {
