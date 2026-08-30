@@ -1,5 +1,5 @@
 // ==========================================
-// بنك الأسئلة التفاعلي الشامل (مقرر الدوال)
+// 1. بنك الأسئلة التفاعلي الشامل (مقرر الدوال)
 // ==========================================
 
 const questions = [
@@ -154,12 +154,34 @@ function resetQuiz() {
     showQuestion();
 }
 
-// تهيئة الصفحة عند التحميل التلقائي
+// ==========================================
+// 2. كود العرض التقديمي (السلايدر)
+// ==========================================
+
+let slideIndex = 0;
+
+function showSlides() {
+    const slides = document.querySelectorAll(".slide");
+    if (slides.length > 0) {
+        slides.forEach(s => s.style.display = "none");
+        slideIndex++;
+        if (slideIndex > slides.length) { slideIndex = 1; }
+        slides[slideIndex - 1].style.display = "block";
+        setTimeout(showSlides, 4500);
+    }
+}
+
+// ==========================================
+// 3. تهيئة التفاعلية والعرض عند التحميل
+// ==========================================
+
 document.addEventListener("DOMContentLoaded", () => {
+    // تشغيل العرض التقديمي (السلايدر)
+    showSlides();
+
+    // تشغيل الاختبار المباشر فقط في حال عدم وجود زر بدء التحدي
     const questionText = document.getElementById("question-text");
     const startBtn = document.getElementById("start-quiz-btn");
-    
-    // تشغيل مباشر فقط في حال كانت صفحة اختبار مستقلة ولا تحتوي على زر بدء التحدي
     if (questionText && !startBtn) {
         showQuestion();
     }
