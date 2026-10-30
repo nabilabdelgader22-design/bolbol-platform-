@@ -1,242 +1,155 @@
-// ==========================================
-// 1. بنك الأسئلة التفاعلي الشامل (20 سؤالاً من درس الدوال والعمليات عليها)
-// ==========================================
-
-const questions = [
-    {
-        question: "في تعريف الدالة، يسمى المتغير س بـ:",
-        options: ["المتغير التابع", "المتغير المستقل", "المجال المقابل", "المدى"],
-        correct: 1
-    },
-    {
-        question: "الدالة الحقيقية هي الدالة التي يكون كل من مجالها ومجالها المقابل مجموعة جزئية من:",
-        options: ["الأعداد الطبيعية ط", "الأعداد الصحيحة ص", "الأعداد الحقيقية ح", "الأعداد النسبية ن"],
-        correct: 2
-    },
-    {
-        question: "إذا كانت د(س) = س² + 2س، فإن صورة العنصر 3 أي د(3) تساوي:",
-        options: ["15", "9", "12", "6"],
-        correct: 0
-    },
-    {
-        question: "إذا كانت هـ(س) = (2س + 1) / (س - 1)، فإن صورة العنصر -2 هي:",
-        options: ["-1", "1", "3", "-3"],
-        correct: 1
-    },
-    {
-        question: "في الدالة د(س) = 3س + 7، النقطة المقابلة للعنصر 2 في المجال هي:",
-        options: ["10", "13", "14", "6"],
-        correct: 1
-    },
-    {
-        question: "وفق الدالة ص = 3س + 7، صورة العدد -3 هي:",
-        options: ["-2", "2", "-9", "16"],
-        correct: 0
-    },
-    {
-        question: "إذا كانت ت(س) = (3س² + 1) / (س + 2)، فإن مجال الدالة ت هو:",
-        options: ["ح", "ح - {2}", "ح - {-2}", "ح - {0}"],
-        correct: 2
-    },
-    {
-        question: "مجموعة صور عناصر المجال وفق الدالة تسمى:",
-        options: ["المجال المقابل", "المدى", "المتغير المستقل", "القاعدة"],
-        correct: 1
-    },
-    {
-        question: "إذا كانت د(س) = 5 - س²، فإن قيمة د(3) تساوي:",
-        options: ["-4", "4", "14", "-14"],
-        correct: 0
-    },
-    {
-        question: "إذا كانت د(س) = 5 - س²، فإن قيمة د(0) تساوي:",
-        options: ["0", "5", "-5", "25"],
-        correct: 1
-    },
-    {
-        question: "إذا كانت د(س) = 5 - س²، فإن قيمة د(2) تساوي:",
-        options: ["1", "3", "-1", "9"],
-        correct: 0
-    },
-    {
-        question: "إذا كانت د(س) = (1 - س) / (2 + س)، فإن قيمة د(-1) تساوي:",
-        options: ["2", "0", "1", "غير معرفة"],
-        correct: 0
-    },
-    {
-        question: "إذا كانت د(س) = (1 - س) / (2 + س)، فإن قيمة د(0) تساوي:",
-        options: ["1", "1/2", "0", "-1"],
-        correct: 1
-    },
-    {
-        question: "إذا كانت د(س) = (2س + 1) / (2س - 1)، فإن قيمة د(3) تساوي:",
-        options: ["7/5", "1", "5/7", "3"],
-        correct: 0
-    },
-    {
-        question: "إذا كانت د(س) = أ س + ب، فإن المقدار [د(س + و) - د(س)] / و يساوي (حيث و ≠ 0):",
-        options: ["أ", "ب", "أ + ب", "و"],
-        correct: 0
-    },
-    {
-        question: "إذا كانت د(س) = س²، هـ(س) = 3س + 1، فإن قاعدة دالة الجمع (د + هـ)(س) هي:",
-        options: ["س² - 3س - 1", "س² + 3س + 1", "3س³ + 1", "س² + 3س"],
-        correct: 1
-    },
-    {
-        question: "إذا كانت د(س) = س² + 1، هـ(س) = س³، فإن تركيب الدالتين (د o هـ)(س) يساوي:",
-        options: ["س⁶ + 1", "س⁵ + 1", "س⁹ + 1", "(س² + 1)³"],
-        correct: 0
-    },
-    {
-        question: "إذا كانت د(س) = س² + 1، هـ(س) = س³، فإن تركيب الدالتين (هـ o د)(س) يساوي:",
-        options: ["س⁶ + 1", "(س² + 1)³", "س⁵ + 1", "س³ + 1"],
-        correct: 1
-    },
-    {
-        question: "إذا كانت د(س) = س³، هـ(س) = 2س - 1، فإن دالة الفرق (د - هـ)(س) هي:",
-        options: ["س³ + 2س - 1", "س³ - 2س + 1", "2س⁴ - س³", "س³ - 2س - 1"],
-        correct: 1
-    },
-    {
-        question: "إذا كانت د(س) = س³، هـ(س) = 2س - 1، فإن دالة الضرب (د · هـ)(س) هي:",
-        options: ["2س⁴ - س³", "2س³ - 1", "س³ - 2س + 1", "2س⁴ + س³"],
-        correct: 0
-    }
-];
-
-let currentQuestionIndex = 0;
-let score = 0;
-let selectedOptionIndex = null;
-
-function startQuiz() {
-    const startBtn = document.getElementById("start-quiz-btn");
-    const quizScreen = document.getElementById("quiz-screen");
-    
-    if (startBtn) startBtn.style.display = "none";
-    if (quizScreen) quizScreen.classList.remove("hidden");
-    
-    resetQuiz();
-}
-
-function showQuestion() {
-    resetState();
-    let currentQuestion = questions[currentQuestionIndex];
-    
-    const questionText = document.getElementById("question-text");
-    if (questionText) {
-        questionText.innerText = (currentQuestionIndex + 1) + ". " + currentQuestion.question;
-    }
-    
-    let optionsContainer = document.getElementById("options-container");
-    if (optionsContainer) {
-        currentQuestion.options.forEach((option, index) => {
-            let btn = document.createElement("button");
-            btn.innerText = option;
-            btn.classList.add("option-btn");
-            btn.onclick = () => selectOption(index);
-            optionsContainer.appendChild(btn);
-        });
-    }
-}
-
-function resetState() {
-    selectedOptionIndex = null;
-    let optionsContainer = document.getElementById("options-container");
-    if (optionsContainer) optionsContainer.innerHTML = "";
-    
-    let nextBtn = document.getElementById("next-btn");
-    if (nextBtn) nextBtn.disabled = true;
-}
-
-// تلوين الإجابات وتوضيح الصحيح منها للطالب مباشرة
-function selectOption(index) {
-    if (selectedOptionIndex !== null) return; // منع التعديل بعد الاختيار
-
-    selectedOptionIndex = index;
-    let correctIndex = questions[currentQuestionIndex].correct;
-    let buttons = document.querySelectorAll(".option-btn");
-
-    buttons.forEach((btn, idx) => {
-        btn.disabled = true; // تعطيل بقية الأزرار
-        if (idx === correctIndex) {
-            btn.style.backgroundColor = "#2e7d32"; // أخضر للإجابة الصحيحة
-            btn.style.color = "#ffffff";
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>منصة بُّلْبُل التَّعْلِيمِيَّة - اختبار الدوال</title>
+    <style>
+        body {
+            font-family: 'Cairo', Tahoma, sans-serif;
+            background-color: #1a1a2e;
+            color: #ffffff;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
         }
-        if (idx === index && index !== correctIndex) {
-            btn.style.backgroundColor = "#c62828"; // أحمر للإجابة الخاطئة
-            btn.style.color = "#ffffff";
+        .container {
+            width: 100%;
+            max-width: 480px;
+            background: #16213e;
+            border: 3px solid #f39c12;
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+            text-align: center;
         }
-    });
-
-    let nextBtn = document.getElementById("next-btn");
-    if (nextBtn) nextBtn.disabled = false;
-}
-
-function nextQuestion() {
-    if (selectedOptionIndex === questions[currentQuestionIndex].correct) {
-        score++;
-    }
-    currentQuestionIndex++;
-    if (currentQuestionIndex < questions.length) {
-        showQuestion();
-    } else {
-        showResult();
-    }
-}
-
-function showResult() {
-    let quizScreen = document.getElementById("quiz-screen");
-    let resultScreen = document.getElementById("result-screen");
-    
-    if (quizScreen) quizScreen.classList.add("hidden");
-    if (resultScreen) {
-        resultScreen.classList.remove("hidden");
-        let resultText = document.getElementById("result-text");
-        if (resultText) {
-            resultText.innerText = "لقد أتممت الاختبار بنجاح! نتيجتك هي: " + score + " من " + questions.length;
+        .header {
+            background: #c0392b;
+            border: 2px solid #f39c12;
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 20px;
         }
-    }
-}
+        .header h2 {
+            margin: 0 0 5px 0;
+            font-size: 20px;
+            color: #f1c40f;
+        }
+        .header p {
+            margin: 0;
+            font-size: 14px;
+        }
+        .question-box {
+            background: #0f3460;
+            border: 2px solid #e94560;
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 15px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        .options {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        .option-btn {
+            background: #e94560;
+            color: white;
+            border: none;
+            padding: 12px;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: 0.3s;
+            font-weight: bold;
+        }
+        .option-btn:hover {
+            background: #c0392b;
+        }
+        .footer-note {
+            background: #c0392b;
+            border: 2px solid #f39c12;
+            border-radius: 10px;
+            padding: 10px;
+            font-size: 13px;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
 
-function resetQuiz() {
-    currentQuestionIndex = 0;
-    score = 0;
-    let resultScreen = document.getElementById("result-screen");
-    let quizScreen = document.getElementById("quiz-screen");
-    
-    if (resultScreen) resultScreen.classList.add("hidden");
-    if (quizScreen) quizScreen.classList.remove("hidden");
-    showQuestion();
-}
+    <div class="container">
+        <div class="header">
+            <h2>منصة بُّلْبُل التَّعْلِيمِيَّة</h2>
+            <p>إعداد: أ. نبيل | اختبار تفاعلي: إيجاد صور عناصر (س) في الدوال</p>
+        </div>
 
-// ==========================================
-// 2. كود العرض التقديمي (السلايدر)
-// ==========================================
+        <div id="quiz-container">
+            <div id="score-tracker" style="margin-bottom: 10px; font-weight: bold; color: #f1c40f;">السؤال: 1 من 10</div>
+            <div class="question-box" id="question-text">جاري تحميل السؤال...</div>
+            <div class="options" id="options-container"></div>
+        </div>
 
-let slideIndex = 0;
+        <div class="footer-note">
+            منصة بلبل التعليمية - طريقك الموثوق نحو النجاح والتفوق
+        </div>
+    </div>
 
-function showSlides() {
-    const slides = document.querySelectorAll(".slide");
-    if (slides.length > 0) {
-        slides.forEach(s => s.style.display = "none");
-        slideIndex++;
-        if (slideIndex > slides.length) { slideIndex = 1; }
-        slides[slideIndex - 1].style.display = "block";
-        setTimeout(showSlides, 4500);
-    }
-}
+    <script>
+        const questions = [
+            { q: "إذا كانت د(س) = ٢س + ٣، فما قيمة د(٤)؟", options: ["٨", "١١", "١٠", "٧"], answer: "١١" },
+            { q: "إذا كانت د(س) = س² - ٥، فما قيمة د(٣)؟", options: ["٤", "٩", "١", "٦"], answer: "٤" },
+            { q: "إذا كانت د(س) = ٣س - ١، فما قيمة د(٥)؟", options: ["١٤", "١٥", "١٦", "١٣"], answer: "١٤" },
+            { q: "إذا كانت د(س) = ٤س ÷ ٢، فما قيمة د(٦)؟", options: ["٨", "١٢", "١٠", "٦"], answer: "١٢" },
+            { q: "إذا كانت د(س) = س + ٧، فما قيمة د(-٢)؟", options: ["٥", "-٥", "٩", "-٩"], answer: "٥" },
+            { q: "إذا كانت د(س) = ٥س، فما قيمة د(٣)؟", options: ["٨", "١٥", "١٠", "٢٥"], answer: "١٥" },
+            { q: "إذا كانت د(س) = س² + ١، فما قيمة د(٠)؟", options: ["٠", "١", "٢", "-١"], answer: "١" },
+            { q: "إذا كانت د(س) = ٢س²، فما قيمة د(٣)؟", options: ["١٨", "١٢", "٣٦", "٦"], answer: "١٨" },
+            { q: "إذا كانت د(س) = ١٠ - س، فما قيمة د(٤)؟", options: ["٦", "١٤", "٤", "٠"], answer: "٦" },
+            { q: "إذا كانت د(س) = ٣س + ٢س، فما قيمة د(٢)؟", options: ["١٠", "١٢", "٨", "٢٠"], answer: "١٠" }
+        ];
 
-// ==========================================
-// 3. تهيئة التفاعلية والعرض عند التحميل
-// ==========================================
+        let currentIdx = 0;
+        let score = 0;
 
-document.addEventListener("DOMContentLoaded", () => {
-    showSlides();
+        function loadQuestion() {
+            if (currentIdx < questions.length) {
+                document.getElementById('score-tracker').innerText = `السؤال: ${currentIdx + 1} من ${questions.length}`;
+                document.getElementById('question-text').innerText = questions[currentIdx].q;
+                
+                const optContainer = document.getElementById('options-container');
+                optContainer.innerHTML = '';
+                
+                questions[currentIdx].options.forEach(opt => {
+                    const btn = document.createElement('button');
+                    btn.className = 'option-btn';
+                    btn.innerText = opt;
+                    btn.onclick = () => checkAnswer(opt);
+                    optContainer.appendChild(btn);
+                });
+            } else {
+                document.getElementById('quiz-container').innerHTML = `
+                    <h3 style="color: #f1c40f;">انتهى الاختبار بنجاح!</h3>
+                    <p style="font-size: 18px;">درجتك النهائية هي: ${score} من ${questions.length}</p>
+                    <p>أحسنت يا أستاذ نبيل، طلابك جاهزون للتميز!</p>
+                `;
+            }
+        }
 
-    const questionText = document.getElementById("question-text");
-    const startBtn = document.getElementById("start-quiz-btn");
-    if (questionText && !startBtn) {
-        showQuestion();
-    }
-});
+        function checkAnswer(selected) {
+            if (selected === questions[currentIdx].answer) {
+                score++;
+            }
+            currentIdx++;
+            loadQuestion();
+        }
+
+        window.onload = loadQuestion;
+    </script>
+</body>
+</html>
