@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>منصة بلبل التعليمية</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@600;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * {
@@ -12,7 +12,7 @@
             margin: 0;
             padding: 0;
             font-family: 'Cairo', sans-serif;
-            font-weight: 700;
+            font-weight: 900; /* خط عريض جداً لجميع عناصر الموقع */
         }
         body {
             background-color: #0f172a;
@@ -21,7 +21,7 @@
             text-align: center;
             overflow-x: hidden;
             scroll-behavior: smooth;
-            font-size: 1.15rem;
+            font-size: 1.2rem;
         }
 
         header {
@@ -42,7 +42,6 @@
             font-weight: 700;
         }
 
-        /* شريط التبويبات الثابتة السريعة للمواد */
         .nav-tabs {
             display: flex;
             justify-content: center;
@@ -58,7 +57,7 @@
             border: 2px solid #fbbf24;
             padding: 12px 25px;
             border-radius: 30px;
-            font-size: 1.15rem;
+            font-size: 1.2rem;
             font-weight: 900;
             text-decoration: none;
             transition: all 0.3s;
@@ -73,7 +72,6 @@
             transform: translateY(-3px);
         }
         
-        /* السلايدر المتحرك */
         .slider-container {
             max-width: 850px;
             margin: 25px auto;
@@ -104,7 +102,7 @@
         }
         .slide-text {
             color: #ffffff;
-            font-size: 1.35rem;
+            font-size: 1.4rem;
             font-weight: 900;
             line-height: 1.7;
         }
@@ -163,7 +161,7 @@
         .card h3 {
             color: #fbbf24;
             margin-bottom: 18px;
-            font-size: 1.7rem;
+            font-size: 1.8rem;
             font-weight: 900;
             display: flex;
             align-items: center;
@@ -173,15 +171,16 @@
 
         .card p {
             color: #f1f5f9;
-            font-size: 1.25rem;
+            font-size: 1.3rem;
             font-weight: 700;
             line-height: 1.8;
         }
 
-        .card-buttons {
+        /* تنسيق الأزرار تحت بعض وبخط عريض كبير */
+        .card-buttons-vertical {
             display: flex;
             flex-direction: column;
-            gap: 15px;
+            gap: 14px;
             margin-top: 22px;
             width: 100%;
         }
@@ -232,486 +231,48 @@
             text-decoration: none;
             font-weight: 900;
             color: #fff;
-            font-size: 1.15rem;
+            font-size: 1.2rem;
             transition: opacity 0.3s;
             flex: 1 1 160px;
         }
         .youtube-live { background-color: #ef4444; }
         .facebook-live { background-color: #1877f2; }
-        .live-btn:hover { opacity: 0.9; }
 
-        .download-btn {
+        /* الأزرار باللونين الأصفر والأحمر وبخط عريض كبير جداً */
+        .action-btn-yellow {
             display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            width: 100%;
-            padding: 15px 20px;
-            border-radius: 10px;
-            text-decoration: none;
-            font-size: 1.2rem;
-            font-weight: 900;
-            transition: transform 0.2s, background 0.3s;
-            white-space: nowrap;
-            box-sizing: border-box;
-        }
-        .browse-btn {
-            background-color: #fbbf24;
-            color: #0f172a;
-        }
-        .browse-btn:hover {
-            background-color: #f59e0b;
-        }
-        .success-btn {
-            background-color: #ef4444;
-            color: #ffffff;
-        }
-        .success-btn:hover {
-            background-color: #dc2626;
-        }
-
-        /* تنسيق أسئلة الاختبار التفاعلي */
-        .quiz-box {
-            background: #1e293b;
-            border: 2px solid #334155;
-            border-radius: 15px;
-            padding: 25px;
-            margin-top: 20px;
-            text-align: right;
-        }
-        .quiz-question {
-            font-size: 1.3rem;
-            color: #fbbf24;
-            font-weight: 900;
-            margin-bottom: 15px;
-        }
-        .quiz-options {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-            margin-bottom: 20px;
-        }
-        .quiz-option-btn {
-            background: #0f172a;
-            color: #fff;
-            border: 2px solid #334155;
-            padding: 12px 20px;
-            border-radius: 8px;
-            font-size: 1.1rem;
-            font-weight: 700;
-            cursor: pointer;
-            text-align: right;
-            transition: all 0.2s;
-        }
-        .quiz-option-btn:hover {
-            border-color: #fbbf24;
-        }
-        .quiz-option-btn.correct {
-            background-color: #22c55e !important;
-            color: #fff !important;
-            border-color: #16a34a !important;
-        }
-        .quiz-option-btn.wrong {
-            background-color: #ef4444 !important;
-            color: #fff !important;
-            border-color: #dc2626 !important;
-        }
-        .quiz-result {
-            font-size: 1.25rem;
-            font-weight: 900;
-            margin-top: 15px;
-            padding: 10px;
-            border-radius: 8px;
-            text-align: center;
-        }
-
-        .contact-box {
-            background: linear-gradient(135deg, #1e293b, #334155);
-            padding: 35px 25px;
-            border-radius: 15px;
-            margin-top: 30px;
-            border: 2px solid #ef4444;
-            max-width: 100%;
-        }
-        .email-link {
-            display: inline-flex;
             align-items: center;
             justify-content: center;
             gap: 12px;
-            background: #fbbf24;
-            color: #0f172a;
-            padding: 16px 32px;
-            border-radius: 35px;
+            width: 100%;
+            padding: 16px 20px;
+            border-radius: 10px;
             text-decoration: none;
-            font-weight: 900;
-            margin-top: 20px;
-            max-width: 100%;
-            word-break: break-all;
             font-size: 1.25rem;
+            font-weight: 900;
+            background-color: #fbbf24;
+            color: #0f172a;
+            box-sizing: border-box;
             transition: background 0.3s;
         }
-        .email-link:hover {
-            background: #ef4444;
-            color: #ffffff;
+        .action-btn-yellow:hover {
+            background-color: #f59e0b;
         }
 
-        .dedication-section {
-            background: #080808;
-            border: 2px solid #F5C542;
-            border-radius: 20px;
-            padding: 50px 25px;
-            margin: 45px auto;
-            max-width: 850px;
-            text-align: center;
-            box-shadow: 0 0 35px rgba(245, 197, 66, 0.25);
-        }
-        .dedication-intro {
-            color: #f1f5f9;
-            font-size: 1.5rem;
-            font-weight: 900;
-            margin-bottom: 15px;
-        }
-        .dedication-gold-name {
-            color: #F5C542;
-            font-family: 'Amiri', serif;
-            font-size: 2.8rem;
-            font-weight: 700;
-            line-height: 1.5;
-        }
-        .dedication-divider {
-            height: 2px;
-            background: linear-gradient(90deg, transparent, #F5C542, transparent);
-            margin: 30px auto;
-            width: 75%;
-        }
-        .dedication-list {
-            list-style: none;
-            padding: 0;
-            margin-top: 20px;
-        }
-        .dedication-list li {
-            font-size: 2rem;
-            font-weight: 900;
-            margin: 18px 0;
+        .action-btn-red {
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 15px;
-        }
-
-        footer {
-            background: #0b1120;
-            padding: 30px 20px;
-            color: #cbd5e1;
-            margin-top: 45px;
-            font-size: 1.1rem;
+            gap: 12px;
+            width: 100%;
+            padding: 16px 20px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-size: 1.25rem;
             font-weight: 900;
-            border-top: 1px solid #334155;
+            background-color: #ef4444;
+            color: #ffffff;
+            box-sizing: border-box;
+            transition: background 0.3s;
         }
-    </style>
-</head>
-<body>
-
-    <header>
-        <h1>منصة بلبل التعليمية</h1>
-        <h2 class="subtitle">Bolbol Educational Platform</h2>
-    </header>
-
-    <!-- تبويبات سريعة ثابتة للمواد -->
-    <div class="nav-tabs">
-        <a href="#math-section" class="nav-tab-btn"><i class="fas fa-square-root-variable" style="color: #fbbf24;"></i> قسم الرياضيات</a>
-        <a href="#physics-section" class="nav-tab-btn"><i class="fas fa-atom" style="color: #ef4444;"></i> قسم الفيزياء</a>
-        <a href="#books-section" class="nav-tab-btn"><i class="fas fa-book" style="color: #fbbf24;"></i> مكتبة الكتب والمراجع</a>
-        <a href="#live-section" class="nav-tab-btn"><i class="fas fa-broadcast-tower" style="color: #ef4444;"></i> قاعة البث المباشر</a>
-    </div>
-
-    <!-- سلايدر العرض التقديمي المتحرك -->
-    <div class="slider-container">
-        <div class="slide active">
-            <div class="slide-icon"><i class="fas fa-school"></i></div>
-            <div class="slide-text">🏫 أبواب المجد تنتظر خطاكم.. هاهنا تُصنع طموحات المستقبل وتشرق شمس الأمل من أعتاب صروحنا التعليمية.</div>
-        </div>
-        <div class="slide">
-            <div class="slide-icon"><i class="fas fa-chalkboard-user"></i></div>
-            <div class="slide-text">📚 فصول دراسية نابضة بالحياة، حيث يُصاغ الفهم العميق وتُذلل صعاب العلوم بأسلوب مبتكر وشيق.</div>
-        </div>
-        <div class="slide">
-            <div class="slide-icon"><i class="fas fa-lightbulb"></i></div>
-            <div class="slide-text">💡 انهل من ينابيع المعرفة الصافية في الرياضيات والفيزياء، وارتقِ بمداركك نحو آفاق التميز والريادة.</div>
-        </div>
-        <div class="slide">
-            <div class="slide-icon"><i class="fas fa-user-graduate"></i></div>
-            <div class="slide-text">👨‍🏫 إشراف وتأسيس الأستاذ: Nabil Abdelgadir.. نرافقكم خطوة بخطوة نحو قمة النجاح والإبداع.</div>
-            <div style="margin-top: 18px;">
-                <a href="#dedication" style="background: #F5C542; color: #000; padding: 10px 22px; border-radius: 25px; text-decoration: none; font-weight: 900; font-size: 1.1rem; display: inline-block;"><i class="fas fa-heart" style="color: #ef4444;"></i> الانتقال للإهداء الخاص</a>
-            </div>
-        </div>
-    </div>
-
-    <!-- قسم السيرة الذاتية والصورة الشخصية الصحيحة -->
-    <section>
-        <div class="card" style="text-align: center;">
-            <div>
-                <img src="https://i.postimg.cc/5Nf4VVLb/1768680691664.png" alt="صورة الأستاذ Nabil Abdelgadir" class="profile-img">
-                <h3 style="justify-content: center; color: #fbbf24;"><i class="fas fa-user-graduate" style="color: #ef4444;"></i> السيرة الذاتية - الأستاذ Nabil Abdelgadir</h3>
-                <p style="margin-bottom: 15px; text-align: right;"><strong>مكان الميلاد:</strong> السودان - الولاية الشمالية - دنقلا - منطقة سورتود - حي قيس مري.</p>
-                <p style="text-align: right;">معلم خبير في تدريس وتطوير المناهج الدراسية لمادتّي الفيزياء والرياضيات. نسعى لتقديم محتوى تعليمي احترافي، مذكرات متكاملة، وامتحانات تدريبية تساعد الطلاب على التفوق والتميز الأكاديمي.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- قسم الرياضيات (مع وضع الاختبار في النهاية) -->
-    <section id="math-section">
-        <h2 class="section-title"><i class="fas fa-square-root-variable" style="color: #fbbf24;"></i> قسم الرياضيات</h2>
-        <div class="card-grid">
-            <div class="card" style="text-align: right;">
-                <div>
-                    <h3><i class="fas fa-book-open" style="color: #fbbf24;"></i> مذكرات وأوراق عمل الرياضيات</h3>
-                    <p>شروحات وافية للتفاضل، التكامل، والرياضيات المتقدمة بخطوات سلسة ومبسطة تساعد الطلاب على الفهم العميق.</p>
-                </div>
-                <div class="card-buttons">
-                    <a href="https://drive.google.com/drive/folders/1xuCEOYAt6dFokR-DQ0KDKXmn-Yn2ifg5" target="_blank" class="download-btn browse-btn"><i class="fas fa-download"></i> تحميل مذكرات الرياضيات</a>
-                </div>
-            </div>
-            
-            <div class="card" style="text-align: right;">
-                <div>
-                    <h3>مذكرات إضافية للرياضيات</h3>
-                    <p>تمارين واختبارات قصيرة ومسائل متنوعة لتثبيت مفاهيم الرياضيات والامتحانات النهائية.</p>
-                </div>
-                <div class="card-buttons">
-                    <a href="https://drive.google.com/drive/folders/1xuCEOYAt6dFokR-DQ0KDKXmn-Yn2ifg5" target="_blank" class="download-btn success-btn"><i class="fas fa-book-open"></i> تصفح مذكرات الرياضيات</a>
-                </div>
-            </div>
-        </div>
-
-        <!-- اختبار الرياضيات التفاعلي في نهاية القسم -->
-        <div class="card" style="text-align: right; margin-top: 25px;">
-            <h3><i class="fas fa-pen-to-square" style="color: #ef4444;"></i> الاختبار التفاعلي - رياضيات</h3>
-            <div class="quiz-box">
-                <div class="quiz-question">س: ما هو تفاضل الدالة ف(س) = س تربيع ؟</div>
-                <div class="quiz-options">
-                    <button class="quiz-option-btn" onclick="checkAnswer(this, false, 'math-res')">أ) س</button>
-                    <button class="quiz-option-btn" onclick="checkAnswer(this, true, 'math-res')">ب) 2س</button>
-                    <button class="quiz-option-btn" onclick="checkAnswer(this, false, 'math-res')">ج) 2</button>
-                </div>
-                <div id="math-res" class="quiz-result"></div>
-            </div>
-        </div>
-    </section>
-
-    <!-- قسم الفيزياء (مع وضع الاختبار في النهاية) -->
-    <section id="physics-section">
-        <h2 class="section-title"><i class="fas fa-atom" style="color: #ef4444;"></i> قسم الفيزياء</h2>
-        <div class="card-grid">
-            <div class="card" style="text-align: right;">
-                <div>
-                    <h3><i class="fas fa-book-open" style="color: #ef4444;"></i> مذكرات وأوراق عمل الفيزياء</h3>
-                    <p>مجموعة مختارة من أوراق العمل والملخصات الشاملة لأبواب الفيزياء المختلفة والقوانين مع تدريبات عملية.</p>
-                </div>
-                <div class="card-buttons">
-                    <a href="https://drive.google.com/drive/folders/15F3QOP2t8RAFHRV4yYzqvx04vUuHl40E" target="_blank" class="download-btn success-btn"><i class="fas fa-download"></i> تحميل مذكرات الفيزياء</a>
-                </div>
-            </div>
-
-            <div class="card" style="text-align: right;">
-                <div>
-                    <h3>ملخصات قوانين الفيزياء</h3>
-                    <p>ملخصات دقيقة لأهم قوانين الفيزياء والمسائل التدريبية لضمان الدرجات النهائية.</p>
-                </div>
-                <div class="card-buttons">
-                    <a href="https://drive.google.com/drive/folders/15F3QOP2t8RAFHRV4yYzqvx04vUuHl40E" target="_blank" class="download-btn browse-btn"><i class="fas fa-book-open"></i> تصفح ملخصات الفيزياء</a>
-                </div>
-            </div>
-        </div>
-
-        <!-- اختبار الفيزياء التفاعلي في نهاية القسم -->
-        <div class="card" style="text-align: right; margin-top: 25px;">
-            <h3><i class="fas fa-pen-to-square" style="color: #fbbf24;"></i> الاختبار التفاعلي - فيزياء</h3>
-            <div class="quiz-box">
-                <div class="quiz-question">س: وحدة قياس الشغل والطاقة في النظام الدولي هي؟</div>
-                <div class="quiz-options">
-                    <button class="quiz-option-btn" onclick="checkAnswer(this, false, 'phys-res')">أ) نيوتن</button>
-                    <button class="quiz-option-btn" onclick="checkAnswer(this, true, 'phys-res')">ب) جول</button>
-                    <button class="quiz-option-btn" onclick="checkAnswer(this, false, 'phys-res')">ج) وات</button>
-                </div>
-                <div id="phys-res" class="quiz-result"></div>
-            </div>
-        </div>
-    </section>
-
-    <!-- مكتبة الكتب المدرسية والمراجع لجميع المراحل -->
-    <section id="books-section">
-        <h2 class="section-title"><i class="fas fa-book"></i> مكتبة الكتب المدرسية (جميع المراحل)</h2>
-        <div class="card-grid">
-            <div class="card" style="text-align: right;">
-                <div>
-                    <h3>كتب ومطبوعات مرحلة الأساس</h3>
-                    <p>المناهج والكتب المقررة لمرحلة الأساس وأوراق العمل المخصصة.</p>
-                </div>
-                <div class="card-buttons">
-                    <a href="https://drive.google.com/drive/folders/1oHDjzWcZtAtEsdqa83HOddZ2mKtZneQ0" target="_blank" class="download-btn browse-btn"><i class="fas fa-download"></i> تصفح كتب الأساس</a>
-                </div>
-            </div>
-
-            <div class="card" style="text-align: right;">
-                <div>
-                    <h3>كتب ومطبوعات المرحلة المتوسطة</h3>
-                    <p>المناهج والكتب المقررة للمرحلة المتوسطة وشروحاتها.</p>
-                </div>
-                <div class="card-buttons">
-                    <a href="https://drive.google.com/drive/folders/1IKOM6Flo5TAeZhQOVk2aykE5cYGlBekP" target="_blank" class="download-btn browse-btn"><i class="fas fa-download"></i> تصفح كتب المتوسطة</a>
-                </div>
-            </div>
-
-            <div class="card" style="text-align: right;">
-                <div>
-                    <h3>كتب ومطبوعات المرحلة الثانوية</h3>
-                    <p>كتب الفيزياء والرياضيات والمناهج الثانوية الرسمية المعتمدة والشهادة السودانية.</p>
-                </div>
-                <div class="card-buttons">
-                    <a href="https://drive.google.com/drive/folders/1mEUNW5GDovt1q6hhxJv-9GGzoeEs_JL6" target="_blank" class="download-btn success-btn"><i class="fas fa-download"></i> تحميل كتب الثانوي</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- قاعة البث المباشر -->
-    <section id="live-section">
-        <h2 class="section-title"><i class="fas fa-broadcast-tower"></i> قاعة البث المباشر والحصص التفاعلية</h2>
-        <div class="card">
-            <h3>تابع الحصص المباشرة والدروس التفاعلية لحظة بلحظة</h3>
-            <div class="video-box">
-                <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe>
-            </div>
-            <div class="live-buttons">
-                <a href="https://www.youtube.com" target="_blank" class="live-btn youtube-live">
-                    <i class="fab fa-youtube"></i> بث يوتيوب المباشر
-                </a>
-                <a href="https://www.facebook.com" target="_blank" class="live-btn facebook-live">
-                    <i class="fab fa-facebook"></i> بث فيسبوك المباشر
-                </a>
-            </div>
-        </div>
-
-        <div style="overflow-x: auto; margin-top: 25px;">
-          <table style="width: 100%; border-collapse: collapse; text-align: right; background-color: #1e293b; color: #ffffff; border-radius: 10px; overflow: hidden; border: 1px solid #334155; min-width: 450px; font-size: 1.15rem;">
-            <thead>
-              <tr style="background-color: #ef4444; color: #ffffff;">
-                <th style="padding: 16px; border: 1px solid #334155; font-weight: 900;">اليوم / المادة</th>
-                <th style="padding: 16px; border: 1px solid #334155; font-weight: 900;">الموضوع</th>
-                <th style="padding: 16px; border: 1px solid #334155; font-weight: 900;">الموعد</th>
-                <th style="padding: 16px; border: 1px solid #334155; font-weight: 900;">رابط الدخول</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td style="padding: 14px; border: 1px solid #334155; font-weight: 900; color: #fbbf24;">الرياضيات</td>
-                <td style="padding: 14px; border: 1px solid #334155; font-weight: 700;">شرح النهايات والاتصال</td>
-                <td style="padding: 14px; border: 1px solid #334155; font-weight: 700;">السبت - 08:00 مساءً</td>
-                <td style="padding: 14px; border: 1px solid #334155;">
-                  <a href="https://www.youtube.com" target="_blank" style="background-color: #ef4444; color: white; padding: 8px 16px; text-decoration: none; border-radius: 6px; display: inline-block; font-size: 1rem; font-weight: 900;"><i class="fas fa-video"></i> انضمام</a>
-                </td>
-              </tr>
-              <tr>
-                <td style="padding: 14px; border: 1px solid #334155; font-weight: 900; color: #fbbf24;">الفيزياء</td>
-                <td style="padding: 14px; border: 1px solid #334155; font-weight: 700;">مراجعة الكهرومغناطيسية</td>
-                <td style="padding: 14px; border: 1px solid #334155; font-weight: 700;">الأحد - 08:00 مساءً</td>
-                <td style="padding: 14px; border: 1px solid #334155;">
-                  <a href="https://www.youtube.com" target="_blank" style="background-color: #ef4444; color: white; padding: 8px 16px; text-decoration: none; border-radius: 6px; display: inline-block; font-size: 1rem; font-weight: 900;"><i class="fas fa-video"></i> انضمام</a>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-    </section>
-
-    <!-- أرشيف الفيديوهات التعليمية -->
-    <section>
-        <h2 class="section-title"><i class="fas fa-video"></i> أرشيف الفيديوهات التعليمية</h2>
-        <div class="card">
-            <h3>شرح مرئي مبسط للدروس المسجلة</h3>
-            <div class="video-box">
-                <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe>
-            </div>
-        </div>
-    </section>
-
-    <section>
-        <div class="contact-box">
-            <h2 style="color: #fbbf24; font-size: 1.9rem; font-weight: 900;"><i class="fas fa-envelope-open-text" style="color: #ef4444;"></i> تواصل معنا</h2>
-            <p style="margin-top: 15px; color: #cbd5e1; font-size: 1.25rem; font-weight: 700;">يسعدنا تواصلكم واستقبال استفساراتكم عبر البريد الإلكتروني الرسمي للمنصة:</p>
-            <a href="mailto:nabilabdelgadir55@gmail.com" class="email-link">
-                <i class="fas fa-envelope"></i> nabilabdelgadir55@gmail.com
-            </a>
-        </div>
-    </section>
-
-    <!-- الإهداء الخاص -->
-    <section id="dedication">
-        <div class="dedication-section">
-            <p class="dedication-intro">إهداءٌ إلى نبع الحنان.. أمي الغالية</p>
-            <h1 class="dedication-gold-name">نفيسة محمود أحمد حاج</h1>
-
-            <div class="dedication-divider"></div>
-
-            <p class="dedication-intro">وإلى قرّة العين والروح.. أبنائي الأحباء:</p>
-            
-            <ul class="dedication-list">
-                <li><span style="font-size: 1.5rem;">⭐</span> <span class="dedication-gold-name">غلا نبيل عبدالقادر</span></li>
-                <li><span style="font-size: 1.5rem;">⭐</span> <span class="dedication-gold-name">حلا نبيل عبدالقادر</span></li>
-                <li><span style="font-size: 1.5rem;">⭐</span> <span class="dedication-gold-name">عبدالقادر نبيل عبدالقادر</span></li>
-            </ul>
-        </div>
-    </section>
-
-    <footer>
-        <p>جميع الحقوق محفوظة © منصة بلبل التعليمية | إعداد: Nabil Abdelgadir</p>
-    </footer>
-
-    <script>
-        // السلايدر المتحرك
-        let slideIndex = 0;
-        const slides = document.querySelectorAll('.slide');
-        
-        function showSlides() {
-            if (slides.length > 0) {
-                slides.forEach(s => s.classList.remove('active'));
-                slideIndex = (slideIndex + 1) % slides.length;
-                slides[slideIndex].classList.add('active');
-            }
-        }
-        
-        if(slides.length > 0) {
-            setInterval(showSlides, 4500);
-        }
-
-        // الاختبار التفاعلي (أخضر وأحمر)
-        function checkAnswer(button, isCorrect, resultId) {
-            const parentBox = button.parentElement;
-            const buttons = parentBox.getElementsByClassName('quiz-option-btn');
-            const resultDiv = document.getElementById(resultId);
-
-            for (let btn of buttons) {
-                btn.disabled = true;
-            }
-
-            if (isCorrect) {
-                button.classList.add('correct');
-                resultDiv.style.color = '#22c55e';
-                resultDiv.innerHTML = 'إجابة صحيحة وموفقة! أحسنت 🌟';
-            } else {
-                button.classList.add('wrong');
-                resultDiv.style.color = '#ef4444';
-                resultDiv.innerHTML = 'إجابة خاطئة، حاول مرة أخرى في المرة القادمة 💪';
-                
-                for (let btn of buttons) {
-                    if (btn.getAttribute('onclick').includes('true')) {
-                        btn.classList.add('correct');
-                    }
-                }
-            }
-        }
-    </script>
-</body>
-</html>
+        .action-btn-red
