@@ -29,16 +29,27 @@
             padding: 35px 15px;
             border-bottom: 4px solid #ef4444;
         }
-        .logo-img {
-            width: 140px;
-            height: 140px;
+        
+        /* إطار الشعار الدائري الذهبي الفخم والواضح */
+        .logo-container {
+            width: 160px;
+            height: 160px;
+            margin: 0 auto 15px auto;
             border-radius: 50%;
-            object-fit: cover;
-            border: 3px solid #fbbf24;
-            margin: 15px auto 10px auto;
-            display: block;
-            box-shadow: 0 0 20px rgba(251, 191, 36, 0.4);
+            border: 5px solid #fbbf24;
+            box-shadow: 0 0 25px rgba(251, 191, 36, 0.5);
+            overflow: hidden;
+            background: #1e293b;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
+        .logo-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
         h1 {
             font-size: 2.8rem;
             color: #fbbf24;
@@ -337,8 +348,10 @@
 <body>
 
     <header>
-        <!-- شعار المنصة الذي أرسلته -->
-        <img src="https://i.postimg.cc/85Qy1K4D/1000641017.jpg" alt="شعار منصة بلبل التعليمية" class="logo-img" onerror="this.src='https://i.postimg.cc/5Nf4VVLb/1768680691664.png'">
+        <!-- الشعار داخل دائرة واضح بإطار ذهبي فخم -->
+        <div class="logo-container">
+            <img src="https://i.postimg.cc/85Qy1K4D/1000641017.jpg" alt="شعار منصة بلبل التعليمية" class="logo-img" onerror="this.src='https://i.postimg.cc/5Nf4VVLb/1768680691664.png'">
+        </div>
         <h1>منصة بلبل التعليمية</h1>
         <h2 class="subtitle">Bolbol Educational Platform</h2>
         <p class="slogan"><i class="fas fa-dove"></i> حيث يغرد العلم في الفيزياء والرياضيات <i class="fas fa-bolt" style="color: #fbbf24;"></i></p>
@@ -561,7 +574,7 @@
         </div>
     </section>
 
-    <!-- قاعة البث المباشر -->
+    <!-- قاعة البث المباشر المكتملة مع الجدول وأزرار الدخول -->
     <section>
         <h2 class="section-title"><i class="fas fa-broadcast-tower"></i> قاعة البث المباشر والحصص التفاعلية</h2>
         <div class="card">
@@ -571,4 +584,104 @@
             </div>
             <div class="live-buttons">
                 <a href="https://www.youtube.com" target="_blank" class="live-btn youtube-live">
-                    <i class="fab fa-
+                    <i class="fab fa-youtube"></i> بث يوتيوب المباشر
+                </a>
+                <a href="https://www.facebook.com" target="_blank" class="live-btn facebook-live">
+                    <i class="fab fa-facebook"></i> بث فيسبوك المباشر
+                </a>
+            </div>
+        </div>
+
+        <div style="overflow-x: auto; margin-top: 20px;">
+          <table style="width: 100%; border-collapse: collapse; text-align: right; background-color: #1e293b; color: #ffffff; border-radius: 10px; overflow: hidden; border: 1px solid #334155; min-width: 450px;">
+            <thead>
+              <tr style="background-color: #ef4444; color: #ffffff;">
+                <th style="padding: 12px; border: 1px solid #334155; font-size: 1.1rem;">اليوم / المادة</th>
+                <th style="padding: 12px; border: 1px solid #334155; font-size: 1.1rem;">الموضوع</th>
+                <th style="padding: 12px; border: 1px solid #334155; font-size: 1.1rem;">الموعد</th>
+                <th style="padding: 12px; border: 1px solid #334155; font-size: 1.1rem;">رابط الدخول</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="padding: 10px; border: 1px solid #334155; font-weight: bold; color: #fbbf24; font-size: 1rem;">الرياضيات</td>
+                <td style="padding: 10px; border: 1px solid #334155; font-size: 1rem;">شرح النهايات والاتصال</td>
+                <td style="padding: 10px; border: 1px solid #334155; font-size: 1rem;">السبت - 08:00 مساءً</td>
+                <td style="padding: 10px; border: 1px solid #334155;">
+                  <a href="https://www.youtube.com" target="_blank" style="background-color: #ef4444; color: white; padding: 6px 12px; text-decoration: none; border-radius: 6px; display: inline-block; font-size: 0.9rem; font-weight: bold;"><i class="fas fa-video"></i> انضمام</a>
+                </td>
+              </tr>
+              <tr>
+                <td style="padding: 10px; border: 1px solid #334155; font-weight: bold; color: #fbbf24; font-size: 1rem;">الفيزياء</td>
+                <td style="padding: 10px; border: 1px solid #334155; font-size: 1rem;">مراجعة الكهرومغناطيسية</td>
+                <td style="padding: 10px; border: 1px solid #334155; font-size: 1rem;">الأحد - 08:00 مساءً</td>
+                <td style="padding: 10px; border: 1px solid #334155;">
+                  <a href="https://www.youtube.com" target="_blank" style="background-color: #ef4444; color: white; padding: 6px 12px; text-decoration: none; border-radius: 6px; display: inline-block; font-size: 0.9rem; font-weight: bold;"><i class="fas fa-video"></i> انضمام</a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+    </section>
+
+    <!-- أرشيف الفيديوهات والدروس المسجلة -->
+    <section>
+        <h2 class="section-title"><i class="fas fa-video"></i> أرشيف الفيديوهات والدروس المسجلة</h2>
+        <div class="card">
+            <h3>شرح مرئي مبسط للدروس المسجلة</h3>
+            <div class="video-box">
+                <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="contact-box">
+            <h2 style="color: #fbbf24; font-size: 1.6rem;"><i class="fas fa-envelope-open-text" style="color: #ef4444;"></i> تواصل معنا</h2>
+            <p style="margin-top: 10px; color: #cbd5e1; font-size: 1.1rem;">يسعدنا تواصلكم واستقبال استفساراتكم عبر البريد الإلكتروني الرسمي للمنصة:</p>
+            <a href="mailto:nabilabdelgadir55@gmail.com" class="email-link">
+                <i class="fas fa-envelope"></i> nabilabdelgadir55@gmail.com
+            </a>
+        </div>
+    </section>
+
+    <!-- قسم الإهداء الخاص والملكي -->
+    <section id="dedication">
+        <div class="dedication-section">
+            <p class="dedication-intro">إهداءٌ إلى نبع الحنان.. أمي الغالية</p>
+            <h1 class="dedication-gold-name">نفيسة محمود أحمد حاج</h1>
+
+            <div class="dedication-divider"></div>
+
+            <p class="dedication-intro">وإلى قرّة العين والروح.. أبنائي الأحباء:</p>
+            
+            <ul class="dedication-list">
+                <li><span style="font-size: 1.2rem;">⭐</span> <span class="dedication-gold-name">غلا نبيل عبدالقادر</span></li>
+                <li><span style="font-size: 1.2rem;">⭐</span> <span class="dedication-gold-name">حلا نبيل عبدالقادر</span></li>
+                <li><span style="font-size: 1.2rem;">⭐</span> <span class="dedication-gold-name">عبدالقادر نبيل عبدالقادر</span></li>
+            </ul>
+        </div>
+    </section>
+
+    <footer>
+        <p>جميع الحقوق محفوظة © منصة بلبل التعليمية (حيث يغرد العلم) | إعداد: Nabil Abdelgadir</p>
+    </footer>
+
+    <script>
+        let slideIndex = 0;
+        const slides = document.querySelectorAll('.slide');
+        
+        function showSlides() {
+            if (slides.length > 0) {
+                slides.forEach(s => s.classList.remove('active'));
+                slideIndex = (slideIndex + 1) % slides.length;
+                slides[slideIndex].classList.add('active');
+            }
+        }
+        
+        if(slides.length > 0) {
+            setInterval(showSlides, 4500);
+        }
+    </script>
+</body>
+</html>
