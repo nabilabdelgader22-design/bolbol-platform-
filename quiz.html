@@ -222,7 +222,7 @@
         card.appendChild(title);
 
         let optionsDiv = document.createElement("div");
-        optionsDiv.className, "options";
+        optionsDiv.className = "options";
         optionsDiv.id = `opt-group-${qIndex}`;
 
         q.options.forEach((opt, optIndex) => {
@@ -262,4 +262,15 @@
             }
         });
 
-        document.getElementById("sub-btn").style.display
+        document.getElementById("sub-btn").style.display = "none";
+        
+        let resultBox = document.getElementById("result-box");
+        resultBox.style.display = "block";
+        document.getElementById("score-text").innerText = `حصلت على ${toEasternArabic(score)} من أصل ${toEasternArabic(questions.length)} درجات!`;
+        
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+</script>
+
+</body>
+</html>
