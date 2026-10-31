@@ -12,7 +12,7 @@
             margin: 0;
             padding: 0;
             font-family: 'Cairo', sans-serif;
-            font-weight: 900; /* خط عريض جداً لجميع عناصر الموقع */
+            font-weight: 900;
         }
         body {
             background-color: #0f172a;
@@ -23,7 +23,6 @@
             scroll-behavior: smooth;
             font-size: 1.2rem;
         }
-
         header {
             background: linear-gradient(135deg, #1e293b, #0f172a);
             padding: 35px 15px;
@@ -41,7 +40,6 @@
             color: #ffffff;
             font-weight: 700;
         }
-
         .nav-tabs {
             display: flex;
             justify-content: center;
@@ -57,7 +55,7 @@
             border: 2px solid #fbbf24;
             padding: 12px 25px;
             border-radius: 30px;
-            font-size: 1.2rem;
+            font-size: 1.15rem;
             font-weight: 900;
             text-decoration: none;
             transition: all 0.3s;
@@ -71,7 +69,6 @@
             color: #0f172a;
             transform: translateY(-3px);
         }
-        
         .slider-container {
             max-width: 850px;
             margin: 25px auto;
@@ -110,14 +107,12 @@
             from { opacity: 0; transform: translateY(10px); }
             to { opacity: 1; transform: translateY(0); }
         }
-
         section {
             padding: 30px 15px;
             max-width: 1100px;
             margin: auto;
             width: 100%;
         }
-
         .section-title {
             color: #fbbf24;
             font-size: 2.3rem;
@@ -133,7 +128,6 @@
             background: rgba(30, 41, 59, 0.7);
             border-radius: 10px;
         }
-
         .card-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -141,7 +135,6 @@
             margin-top: 20px;
             width: 100%;
         }
-
         .card {
             background: #1e293b;
             padding: 30px;
@@ -153,11 +146,6 @@
             flex-direction: column;
             justify-content: space-between;
         }
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(251, 191, 36, 0.2);
-        }
-
         .card h3 {
             color: #fbbf24;
             margin-bottom: 18px;
@@ -168,15 +156,12 @@
             gap: 12px;
             line-height: 1.5;
         }
-
         .card p {
             color: #f1f5f9;
             font-size: 1.3rem;
             font-weight: 700;
             line-height: 1.8;
         }
-
-        /* تنسيق الأزرار تحت بعض وبخط عريض كبير */
         .card-buttons-vertical {
             display: flex;
             flex-direction: column;
@@ -184,7 +169,6 @@
             margin-top: 22px;
             width: 100%;
         }
-
         .profile-img {
             width: 150px;
             height: 150px;
@@ -194,7 +178,6 @@
             margin-bottom: 20px;
             box-shadow: 0 5px 18px rgba(0,0,0,0.7);
         }
-
         .video-box {
             position: relative;
             padding-bottom: 56.25%;
@@ -213,7 +196,6 @@
             height: 100%;
             border: 0;
         }
-
         .live-buttons {
             display: flex;
             justify-content: center;
@@ -232,13 +214,10 @@
             font-weight: 900;
             color: #fff;
             font-size: 1.2rem;
-            transition: opacity 0.3s;
             flex: 1 1 160px;
         }
         .youtube-live { background-color: #ef4444; }
         .facebook-live { background-color: #1877f2; }
-
-        /* الأزرار باللونين الأصفر والأحمر وبخط عريض كبير جداً */
         .action-btn-yellow {
             display: flex;
             align-items: center;
@@ -253,12 +232,7 @@
             background-color: #fbbf24;
             color: #0f172a;
             box-sizing: border-box;
-            transition: background 0.3s;
         }
-        .action-btn-yellow:hover {
-            background-color: #f59e0b;
-        }
-
         .action-btn-red {
             display: flex;
             align-items: center;
@@ -273,6 +247,42 @@
             background-color: #ef4444;
             color: #ffffff;
             box-sizing: border-box;
-            transition: background 0.3s;
         }
-        .action-btn-red
+        .quiz-box {
+            background: #1e293b;
+            border: 2px solid #334155;
+            border-radius: 15px;
+            padding: 25px;
+            margin-top: 20px;
+            text-align: right;
+        }
+        .quiz-question {
+            font-size: 1.35rem;
+            color: #fbbf24;
+            font-weight: 900;
+            margin-bottom: 15px;
+        }
+        .quiz-options {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        .quiz-option-btn {
+            background: #0f172a;
+            color: #fff;
+            border: 2px solid #334155;
+            padding: 14px 20px;
+            border-radius: 8px;
+            font-size: 1.15rem;
+            font-weight: 900;
+            cursor: pointer;
+            text-align: right;
+        }
+        .quiz-option-btn.correct {
+            background-color: #22c55e !important;
+            color: #fff !important;
+        }
+        .quiz-option-btn.wrong {
+            background-color: #ef4444 !important;
+            color: #fff !important;
