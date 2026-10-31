@@ -53,7 +53,6 @@
             border: 2px dashed #ef4444;
         }
 
-        /* شريط التبويبات الثابتة السريعة للمواد */
         .nav-tabs {
             display: flex;
             justify-content: center;
@@ -279,7 +278,6 @@
             background-color: #dc2626;
         }
 
-        /* تنسيق أسئلة الاختبار التفاعلي مع تلوين الإجابات */
         .quiz-box {
             background: #1e293b;
             border: 2px solid #334155;
@@ -310,4 +308,34 @@
             font-weight: 700;
             cursor: pointer;
             text-align: right;
-            transition: all
+            transition: all 0.2s;
+        }
+        .quiz-option-btn:hover {
+            border-color: #fbbf24;
+        }
+        .quiz-option-btn.correct {
+            background-color: #22c55e !important;
+            color: #fff !important;
+            border-color: #16a34a !important;
+        }
+        .quiz-option-btn.wrong {
+            background-color: #ef4444 !important;
+            color: #fff !important;
+            border-color: #dc2626 !important;
+        }
+        .quiz-result {
+            font-size: 1.25rem;
+            font-weight: 900;
+            margin-top: 15px;
+            padding: 10px;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .contact-box {
+            background: linear-gradient(135deg, #1e293b, #334155);
+            padding: 35px 25px;
+            border-radius: 15px;
+            margin-top: 30px;
+            border: 2px solid #ef4444;
+            max-width: 1
