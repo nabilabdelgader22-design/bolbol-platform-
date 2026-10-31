@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>منصة بلبل التعليمية | حيث يغرد العلم</title>
-    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@700&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@700&family=Cairo:wght@600;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * {
@@ -12,60 +12,61 @@
             margin: 0;
             padding: 0;
             font-family: 'Cairo', sans-serif;
+            font-weight: 700; /* جعل جميع خطوط الموقع عريضة افتراضياً */
         }
         body {
             background-color: #0f172a;
             color: #f8fafc;
-            line-height: 1.7;
+            line-height: 1.8;
             text-align: center;
             overflow-x: hidden;
             scroll-behavior: smooth;
-            font-size: 1.1rem; /* تكبير الخط العام للصفحة */
+            font-size: 1.15rem;
         }
 
         header {
             background: linear-gradient(135deg, #1e293b, #0f172a);
-            padding: 30px 15px;
+            padding: 35px 15px;
             border-bottom: 4px solid #ef4444;
         }
         h1 {
-            font-size: 2.6rem; /* تكبير اسم المنصة الرئيسي */
+            font-size: 2.8rem; /* خط عريض وكبير جداً لاسم المنصة */
             color: #fbbf24;
-            margin-bottom: 8px;
+            margin-bottom: 10px;
             font-weight: 900;
-            text-shadow: 0 0 12px rgba(251, 191, 36, 0.4);
+            text-shadow: 0 0 15px rgba(251, 191, 36, 0.4);
         }
         h2.subtitle {
-            font-size: 1.5rem; /* تكبير العنوان الفرعي بالإنجليزية */
+            font-size: 1.6rem;
             color: #ffffff;
-            margin-bottom: 12px;
+            margin-bottom: 15px;
             font-weight: 700;
         }
         p.slogan {
-            font-size: 1.2rem; /* تكبير الشعار */
+            font-size: 1.3rem;
             color: #fbbf24;
-            font-weight: bold;
-            background: rgba(239, 68, 68, 0.15);
+            font-weight: 900;
+            background: rgba(239, 68, 68, 0.2);
             display: inline-block;
-            padding: 8px 22px;
-            border-radius: 25px;
-            border: 1px dashed #ef4444;
+            padding: 10px 25px;
+            border-radius: 30px;
+            border: 2px dashed #ef4444;
         }
         
         .slider-container {
             max-width: 850px;
-            margin: 25px auto;
+            margin: 30px auto;
             position: relative;
             background: linear-gradient(135deg, #1e293b, #334155);
             border-radius: 15px;
             overflow: hidden;
             box-shadow: 0 10px 25px rgba(0,0,0,0.6);
             border: 2px solid #fbbf24;
-            min-height: 200px;
+            min-height: 220px;
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 25px;
+            padding: 30px;
         }
         .slide {
             display: none;
@@ -76,15 +77,15 @@
             display: block;
         }
         .slide-icon {
-            font-size: 3rem;
+            font-size: 3.2rem;
             color: #ef4444;
-            margin-bottom: 12px;
+            margin-bottom: 15px;
         }
         .slide-text {
             color: #ffffff;
-            font-size: 1.35rem; /* تكبير نصوص السلايدر المتحرك لتكون واضحة جداً */
-            font-weight: 700;
-            line-height: 1.7;
+            font-size: 1.45rem; /* تكبير وعرض نصوص السلايدر */
+            font-weight: 900;
+            line-height: 1.8;
         }
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(10px); }
@@ -92,7 +93,7 @@
         }
 
         section {
-            padding: 25px 15px;
+            padding: 30px 15px;
             max-width: 1100px;
             margin: auto;
             width: 100%;
@@ -100,34 +101,34 @@
 
         .section-title {
             color: #fbbf24;
-            font-size: 2.1rem; /* تكبير عناوين الاقسام الرئيسية */
+            font-size: 2.3rem; /* تكبير وعرض عناوين الأقسام */
             font-weight: 900;
-            margin-bottom: 20px;
+            margin-bottom: 22px;
             display: flex;
             align-items: center;
             justify-content: center;
             gap: 12px;
-            border-right: 5px solid #ef4444;
-            border-left: 5px solid #ef4444;
-            padding: 8px 12px;
-            background: rgba(30, 41, 59, 0.6);
-            border-radius: 8px;
+            border-right: 6px solid #ef4444;
+            border-left: 6px solid #ef4444;
+            padding: 10px 15px;
+            background: rgba(30, 41, 59, 0.7);
+            border-radius: 10px;
         }
 
         .card-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 22px;
-            margin-top: 15px;
+            gap: 25px;
+            margin-top: 20px;
             width: 100%;
         }
 
         .card {
             background: #1e293b;
-            padding: 25px;
-            border-radius: 12px;
+            padding: 30px;
+            border-radius: 15px;
             border: 1px solid #334155;
-            border-top: 4px solid #fbbf24;
+            border-top: 5px solid #fbbf24;
             transition: transform 0.3s, box-shadow 0.3s;
             display: flex;
             flex-direction: column;
@@ -135,42 +136,43 @@
         }
         .card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 8px 20px rgba(251, 191, 36, 0.15);
+            box-shadow: 0 10px 25px rgba(251, 191, 36, 0.2);
         }
 
         .card h3 {
             color: #fbbf24;
-            margin-bottom: 15px;
-            font-size: 1.55rem; /* تكبير عناوين الكروت */
-            font-weight: 800;
+            margin-bottom: 18px;
+            font-size: 1.7rem; /* تكبير عناوين الكروت */
+            font-weight: 900;
             display: flex;
             align-items: center;
-            gap: 10px;
-            line-height: 1.4;
+            gap: 12px;
+            line-height: 1.5;
         }
 
         .card p {
-            color: #e2e8f0;
-            font-size: 1.15rem; /* تكبير النصوص داخل الكروت */
-            line-height: 1.7;
+            color: #f1f5f9;
+            font-size: 1.25rem; /* تكبير النصوص داخل الكروت وجعلها عريضة */
+            font-weight: 700;
+            line-height: 1.8;
         }
 
         .card-buttons {
             display: flex;
             flex-direction: column;
-            gap: 12px;
-            margin-top: 20px;
+            gap: 15px;
+            margin-top: 22px;
             width: 100%;
         }
 
         .profile-img {
-            width: 140px;
-            height: 140px;
+            width: 150px;
+            height: 150px;
             border-radius: 50%;
             object-fit: cover;
-            border: 3px solid #fbbf24;
-            margin-bottom: 18px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.6);
+            border: 4px solid #fbbf24;
+            margin-bottom: 20px;
+            box-shadow: 0 5px 18px rgba(0,0,0,0.7);
         }
 
         .video-box {
@@ -178,8 +180,8 @@
             padding-bottom: 56.25%;
             height: 0;
             overflow: hidden;
-            border-radius: 10px;
-            margin-top: 15px;
+            border-radius: 12px;
+            margin-top: 20px;
             background: #000;
             border: 2px solid #334155;
         }
@@ -195,23 +197,23 @@
         .live-buttons {
             display: flex;
             justify-content: center;
-            gap: 12px;
-            margin-top: 18px;
+            gap: 15px;
+            margin-top: 20px;
             flex-wrap: wrap;
         }
         .live-btn {
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            gap: 8px;
-            padding: 14px 20px;
-            border-radius: 8px;
+            gap: 10px;
+            padding: 15px 22px;
+            border-radius: 10px;
             text-decoration: none;
-            font-weight: bold;
+            font-weight: 900;
             color: #fff;
-            font-size: 1.05rem; /* تكبير أزرار البث */
+            font-size: 1.15rem;
             transition: opacity 0.3s;
-            flex: 1 1 150px;
+            flex: 1 1 160px;
         }
         .youtube-live { background-color: #ef4444; }
         .facebook-live { background-color: #1877f2; }
@@ -223,11 +225,11 @@
             justify-content: center;
             gap: 10px;
             width: 100%;
-            padding: 14px 18px;
-            border-radius: 8px;
+            padding: 15px 20px;
+            border-radius: 10px;
             text-decoration: none;
-            font-size: 1.1rem; /* تكبير أزرار التحميل والتصفح */
-            font-weight: bold;
+            font-size: 1.2rem; /* تكبير أزرار التحميل */
+            font-weight: 900;
             transition: transform 0.2s, background 0.3s;
             white-space: nowrap;
             box-sizing: border-box;
@@ -249,9 +251,9 @@
 
         .contact-box {
             background: linear-gradient(135deg, #1e293b, #334155);
-            padding: 30px 20px;
+            padding: 35px 25px;
             border-radius: 15px;
-            margin-top: 25px;
+            margin-top: 30px;
             border: 2px solid #ef4444;
             max-width: 100%;
         }
@@ -259,17 +261,17 @@
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            gap: 10px;
+            gap: 12px;
             background: #fbbf24;
             color: #0f172a;
-            padding: 14px 28px;
-            border-radius: 30px;
+            padding: 16px 32px;
+            border-radius: 35px;
             text-decoration: none;
-            font-weight: 800;
-            margin-top: 18px;
+            font-weight: 900;
+            margin-top: 20px;
             max-width: 100%;
             word-break: break-all;
-            font-size: 1.15rem; /* تكبير الايميل */
+            font-size: 1.25rem;
             transition: background 0.3s;
         }
         .email-link:hover {
@@ -281,50 +283,53 @@
             background: #080808;
             border: 2px solid #F5C542;
             border-radius: 20px;
-            padding: 45px 20px;
-            margin: 40px auto;
+            padding: 50px 25px;
+            margin: 45px auto;
             max-width: 850px;
             text-align: center;
-            box-shadow: 0 0 30px rgba(245, 197, 66, 0.2);
+            box-shadow: 0 0 35px rgba(245, 197, 66, 0.25);
         }
         .dedication-intro {
-            color: #e2e8f0;
-            font-size: 1.4rem; /* تكبير نصوص الإهداء */
-            margin-bottom: 12px;
+            color: #f1f5f9;
+            font-size: 1.5rem;
+            font-weight: 900;
+            margin-bottom: 15px;
         }
         .dedication-gold-name {
             color: #F5C542;
             font-family: 'Amiri', serif;
-            font-size: 2.5rem; /* تكبير الأسماء الذهبية للأم والأبناء */
+            font-size: 2.8rem;
             font-weight: 700;
-            line-height: 1.4;
+            line-height: 1.5;
         }
         .dedication-divider {
-            height: 1px;
+            height: 2px;
             background: linear-gradient(90deg, transparent, #F5C542, transparent);
-            margin: 25px auto;
-            width: 70%;
+            margin: 30px auto;
+            width: 75%;
         }
         .dedication-list {
             list-style: none;
             padding: 0;
-            margin-top: 15px;
+            margin-top: 20px;
         }
         .dedication-list li {
-            font-size: 1.9rem;
-            margin: 15px 0;
+            font-size: 2rem;
+            font-weight: 900;
+            margin: 18px 0;
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 12px;
+            gap: 15px;
         }
 
         footer {
             background: #0b1120;
-            padding: 25px 15px;
-            color: #94a3b8;
-            margin-top: 40px;
-            font-size: 1rem; /* تكبير حقوق النشر */
+            padding: 30px 20px;
+            color: #cbd5e1;
+            margin-top: 45px;
+            font-size: 1.1rem;
+            font-weight: 900;
             border-top: 1px solid #334155;
         }
     </style>
@@ -354,8 +359,8 @@
         <div class="slide">
             <div class="slide-icon"><i class="fas fa-user-graduate"></i></div>
             <div class="slide-text">👨‍🏫 إشراف وتأسيس الأستاذ: Nabil Abdelgadir.. نرافقكم خطوة بخطوة نحو قمة النجاح والإبداع.</div>
-            <div style="margin-top: 15px;">
-                <a href="#dedication" style="background: #F5C542; color: #000; padding: 8px 18px; border-radius: 20px; text-decoration: none; font-weight: bold; font-size: 1rem; display: inline-block;"><i class="fas fa-heart" style="color: #ef4444;"></i> الانتقال للإهداء الخاص</a>
+            <div style="margin-top: 18px;">
+                <a href="#dedication" style="background: #F5C542; color: #000; padding: 10px 22px; border-radius: 25px; text-decoration: none; font-weight: 900; font-size: 1.1rem; display: inline-block;"><i class="fas fa-heart" style="color: #ef4444;"></i> الانتقال للإهداء الخاص</a>
             </div>
         </div>
     </div>
@@ -366,7 +371,7 @@
             <div>
                 <img src="https://i.postimg.cc/5Nf4VVLb/1768680691664.png" alt="صورة الأستاذ Nabil Abdelgadir" class="profile-img">
                 <h3 style="justify-content: center; color: #fbbf24;"><i class="fas fa-user-graduate" style="color: #ef4444;"></i> السيرة الذاتية - الأستاذ Nabil Abdelgadir</h3>
-                <p style="margin-bottom: 12px; text-align: right;"><strong>مكان الميلاد:</strong> السودان - الولاية الشمالية - دنقلا - منطقة سورتود - حي قيس مري.</p>
+                <p style="margin-bottom: 15px; text-align: right;"><strong>مكان الميلاد:</strong> السودان - الولاية الشمالية - دنقلا - منطقة سورتود - حي قيس مري.</p>
                 <p style="text-align: right;">معلم خبير في تدريس وتطوير المناهج الدراسية لمادتّي الفيزياء والرياضيات. نسعى لتقديم محتوى تعليمي احترافي، مذكرات متكاملة، وامتحانات تدريبية تساعد الطلاب على التفوق والتميز الأكاديمي.</p>
             </div>
         </div>
@@ -393,7 +398,7 @@
     <section>
         <h2 class="section-title"><i class="fas fa-file-alt"></i> مذكرات واختبارات تفاعلية</h2>
         <div class="card-grid">
-            <div class="card" style="text-align: right; border-top: 4px solid #ef4444;">
+            <div class="card" style="text-align: right; border-top: 5px solid #ef4444;">
                 <div>
                     <h3><i class="fas fa-laptop-code" style="color: #fbbf24;"></i> الاختبار التفاعلي في الرياضيات</h3>
                     <p>اختبار إلكتروني سريع مكون من 10 أسئلة لتصحيح ومراجعة المفاهيم الأساسية مع إظهار النتيجة فوراً.</p>
@@ -412,3 +417,228 @@
                     <a href="https://drive.google.com/drive/folders/15F3QOP2t8RAFHRV4yYzqvx04vUuHl40E" target="_blank" class="download-btn browse-btn"><i class="fas fa-book-open"></i> تصفح المذكرات</a>
                     <a href="https://drive.google.com/drive/folders/15F3QOP2t8RAFHRV4yYzqvx04vUuHl40E" target="_blank" class="download-btn success-btn"><i class="fas fa-download"></i> تحميل المذكرات</a>
                 </div>
+            </div>
+
+            <div class="card" style="text-align: right;">
+                <div>
+                    <h3>مذكرات وأوراق عمل الرياضيات</h3>
+                    <p>تمارين واختبارات قصيرة ومسائل متنوعة لتثبيت مفاهيم الرياضيات والامتحانات.</p>
+                </div>
+                <div class="card-buttons">
+                    <a href="https://drive.google.com/drive/folders/1xuCEOYAt6dFokR-DQ0KDKXmn-Yn2ifg5" target="_blank" class="download-btn browse-btn"><i class="fas fa-book-open"></i> تصفح المذكرات</a>
+                    <a href="https://drive.google.com/drive/folders/1xuCEOYAt6dFokR-DQ0KDKXmn-Yn2ifg5" target="_blank" class="download-btn success-btn"><i class="fas fa-download"></i> تحميل المذكرات</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2 class="section-title"><i class="fas fa-book"></i> مكتبة الكتب المدرسية (جميع المراحل)</h2>
+        <div class="card-grid">
+            <div class="card" style="text-align: right;">
+                <div>
+                    <h3>كتب مرحلة الأساس</h3>
+                    <p>المناهج والكتب المقررة لمرحلة الأساس في جميع المواد الدراسية المختلفة.</p>
+                </div>
+                <div class="card-buttons">
+                    <a href="https://drive.google.com/drive/folders/1oHDjzWcZtAtEsdqa83HOddZ2mKtZneQ0" target="_blank" class="download-btn browse-btn"><i class="fas fa-book-open"></i> تصفح الكتب</a>
+                    <a href="https://drive.google.com/drive/folders/1oHDjzWcZtAtEsdqa83HOddZ2mKtZneQ0" target="_blank" class="download-btn success-btn"><i class="fas fa-download"></i> تحميل الكتب</a>
+                </div>
+            </div>
+
+            <div class="card" style="text-align: right;">
+                <div>
+                    <h3>مطبوعات وأوراق عمل الأساس</h3>
+                    <p>ملخصات، أوراق عمل، ومطبوعات مخصصة لطلاب مرحلة الأساس.</p>
+                </div>
+                <div class="card-buttons">
+                    <a href="https://drive.google.com/drive/folders/1_A-HpEvo_1VYkcTZiruh42huZPDqDOaG" target="_blank" class="download-btn browse-btn"><i class="fas fa-book-open"></i> تصفح المطبوعات</a>
+                    <a href="https://drive.google.com/drive/folders/1_A-HpEvo_1VYkcTZiruh42huZPDqDOaG" target="_blank" class="download-btn success-btn"><i class="fas fa-download"></i> تحميل المطبوعات</a>
+                </div>
+            </div>
+            
+            <div class="card" style="text-align: right;">
+                <div>
+                    <h3>كتب المرحلة المتوسطة</h3>
+                    <p>المناهج والكتب المقررة للمرحلة المتوسطة في مختلف المواد الدراسية.</p>
+                </div>
+                <div class="card-buttons">
+                    <a href="https://drive.google.com/drive/folders/1IKOM6Flo5TAeZhQOVk2aykE5cYGlBekP" target="_blank" class="download-btn browse-btn"><i class="fas fa-book-open"></i> تصفح الكتب</a>
+                    <a href="https://drive.google.com/drive/folders/1IKOM6Flo5TAeZhQOVk2aykE5cYGlBekP" target="_blank" class="download-btn success-btn"><i class="fas fa-download"></i> تحميل الكتب</a>
+                </div>
+            </div>
+
+            <div class="card" style="text-align: right;">
+                <div>
+                    <h3>مطبوعات وأوراق عمل المرحلة المتوسطة</h3>
+                    <p>تمارين وشروحات وأوراق عمل تدريبية للمرحلة المتوسطة.</p>
+                </div>
+                <div class="card-buttons">
+                    <a href="https://drive.google.com/drive/folders/14-Kr9XElxkM_lmaXUCd2l5oZ40kmKzng" target="_blank" class="download-btn browse-btn"><i class="fas fa-book-open"></i> تصفح المطبوعات</a>
+                    <a href="https://drive.google.com/drive/folders/14-Kr9XElxkM_lmaXUCd2l5oZ40kmKzng" target="_blank" class="download-btn success-btn"><i class="fas fa-download"></i> تحميل المطبوعات</a>
+                </div>
+            </div>
+
+            <div class="card" style="text-align: right;">
+                <div>
+                    <h3>كتب المرحلة الثانوية</h3>
+                    <p>كتب الفيزياء والرياضيات والمناهج الثانوية الرسمية المعتمدة.</p>
+                </div>
+                <div class="card-buttons">
+                    <a href="https://drive.google.com/drive/folders/1mEUNW5GDovt1q6hhxJv-9GGzoeEs_JL6" target="_blank" class="download-btn browse-btn"><i class="fas fa-book-open"></i> تصفح الكتب</a>
+                    <a href="https://drive.google.com/drive/folders/1mEUNW5GDovt1q6hhxJv-9GGzoeEs_JL6" target="_blank" class="download-btn success-btn"><i class="fas fa-download"></i> تحميل الكتب</a>
+                </div>
+            </div>
+
+            <div class="card" style="text-align: right;">
+                <div>
+                    <h3>مطبوعات وأوراق عمل المرحلة الثانوية</h3>
+                    <p>أوراق عمل واختبارات تجريبية ومذكرات مخصصة للمرحلة الثانوية.</p>
+                </div>
+                <div class="card-buttons">
+                    <a href="https://drive.google.com/drive/folders/10MNoEz5UoklilIgqOAr6xVyl-OjyZYrj" target="_blank" class="download-btn browse-btn"><i class="fas fa-book-open"></i> تصفح المطبوعات</a>
+                    <a href="https://drive.google.com/drive/folders/10MNoEz5UoklilIgqOAr6xVyl-OjyZYrj" target="_blank" class="download-btn success-btn"><i class="fas fa-download"></i> تحميل المطبوعات</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2 class="section-title"><i class="fas fa-book-reader"></i> مكتبة الكتب المتنوعة</h2>
+        <div class="card" style="text-align: right;">
+            <div>
+                <h3>كتب الثقافة العامة وتطوير الذات</h3>
+                <p>مجموعة مختارة من الكتب الإثرائية والتمارين المساعدة لتوسيع مدارك الطلاب وتنمية المهارات العقلية.</p>
+            </div>
+            <div class="card-buttons" style="flex-direction: row; flex-wrap: wrap;">
+                <a href="https://drive.google.com" target="_blank" class="download-btn browse-btn" style="flex: 1 1 140px;"><i class="fas fa-book-open"></i> تصفح الكتاب</a>
+                <a href="https://drive.google.com" target="_blank" class="download-btn success-btn" style="flex: 1 1 140px;"><i class="fas fa-download"></i> تحميل الكتاب</a>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2 class="section-title"><i class="fas fa-graduation-cap"></i> المراجع العلمية المتقدمة</h2>
+        <div class="card" style="text-align: right;">
+            <div>
+                <h3>مراجع الفيزياء والرياضيات الجامعية</h3>
+                <p>مراجع علمية متقدمة وموسوعات دقيقة موجهة للمعلمين والطلاب الراغبين في التعمق والبحث العلمي الأكاديمي.</p>
+            </div>
+            <div class="card-buttons" style="flex-direction: row; flex-wrap: wrap;">
+                <a href="https://drive.google.com" target="_blank" class="download-btn browse-btn" style="flex: 1 1 140px;"><i class="fas fa-book-open"></i> استعراض المراجع</a>
+                <a href="https://drive.google.com" target="_blank" class="download-btn success-btn" style="flex: 1 1 140px;"><i class="fas fa-download"></i> تحميل المراجع</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- قاعة البث المباشر -->
+    <section>
+        <h2 class="section-title"><i class="fas fa-broadcast-tower"></i> قاعة البث المباشر والحصص التفاعلية</h2>
+        <div class="card">
+            <h3>تابع الحصص المباشرة والدروس التفاعلية لحظة بلحظة</h3>
+            <div class="video-box">
+                <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe>
+            </div>
+            <div class="live-buttons">
+                <a href="https://www.youtube.com" target="_blank" class="live-btn youtube-live">
+                    <i class="fab fa-youtube"></i> بث يوتيوب المباشر
+                </a>
+                <a href="https://www.facebook.com" target="_blank" class="live-btn facebook-live">
+                    <i class="fab fa-facebook"></i> بث فيسبوك المباشر
+                </a>
+            </div>
+        </div>
+
+        <div style="overflow-x: auto; margin-top: 25px;">
+          <table style="width: 100%; border-collapse: collapse; text-align: right; background-color: #1e293b; color: #ffffff; border-radius: 10px; overflow: hidden; border: 1px solid #334155; min-width: 450px; font-size: 1.15rem;">
+            <thead>
+              <tr style="background-color: #ef4444; color: #ffffff;">
+                <th style="padding: 16px; border: 1px solid #334155; font-weight: 900;">اليوم / المادة</th>
+                <th style="padding: 16px; border: 1px solid #334155; font-weight: 900;">الموضوع</th>
+                <th style="padding: 16px; border: 1px solid #334155; font-weight: 900;">الموعد</th>
+                <th style="padding: 16px; border: 1px solid #334155; font-weight: 900;">رابط الدخول</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="padding: 14px; border: 1px solid #334155; font-weight: 900; color: #fbbf24;">الرياضيات</td>
+                <td style="padding: 14px; border: 1px solid #334155; font-weight: 700;">شرح النهايات والاتصال</td>
+                <td style="padding: 14px; border: 1px solid #334155; font-weight: 700;">السبت - 08:00 مساءً</td>
+                <td style="padding: 14px; border: 1px solid #334155;">
+                  <a href="https://www.youtube.com" target="_blank" style="background-color: #ef4444; color: white; padding: 8px 16px; text-decoration: none; border-radius: 6px; display: inline-block; font-size: 1rem; font-weight: 900;"><i class="fas fa-video"></i> انضمام</a>
+                </td>
+              </tr>
+              <tr>
+                <td style="padding: 14px; border: 1px solid #334155; font-weight: 900; color: #fbbf24;">الفيزياء</td>
+                <td style="padding: 14px; border: 1px solid #334155; font-weight: 700;">مراجعة الكهرومغناطيسية</td>
+                <td style="padding: 14px; border: 1px solid #334155; font-weight: 700;">الأحد - 08:00 مساءً</td>
+                <td style="padding: 14px; border: 1px solid #334155;">
+                  <a href="https://www.youtube.com" target="_blank" style="background-color: #ef4444; color: white; padding: 8px 16px; text-decoration: none; border-radius: 6px; display: inline-block; font-size: 1rem; font-weight: 900;"><i class="fas fa-video"></i> انضمام</a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+    </section>
+
+    <!-- أرشيف الفيديوهات التعليمية -->
+    <section>
+        <h2 class="section-title"><i class="fas fa-video"></i> أرشيف الفيديوهات التعليمية</h2>
+        <div class="card">
+            <h3>شرح مرئي مبسط للدروس المسجلة</h3>
+            <div class="video-box">
+                <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="contact-box">
+            <h2 style="color: #fbbf24; font-size: 1.9rem; font-weight: 900;"><i class="fas fa-envelope-open-text" style="color: #ef4444;"></i> تواصل معنا</h2>
+            <p style="margin-top: 15px; color: #cbd5e1; font-size: 1.25rem; font-weight: 700;">يسعدنا تواصلكم واستقبال استفساراتكم عبر البريد الإلكتروني الرسمي للمنصة:</p>
+            <a href="mailto:nabilabdelgadir55@gmail.com" class="email-link">
+                <i class="fas fa-envelope"></i> nabilabdelgadir55@gmail.com
+            </a>
+        </div>
+    </section>
+
+    <!-- قسم الإهداء الخاص والملكي -->
+    <section id="dedication">
+        <div class="dedication-section">
+            <p class="dedication-intro">إهداءٌ إلى نبع الحنان.. أمي الغالية</p>
+            <h1 class="dedication-gold-name">نفيسة محمود أحمد حاج</h1>
+
+            <div class="dedication-divider"></div>
+
+            <p class="dedication-intro">وإلى قرّة العين والروح.. أبنائي الأحباء:</p>
+            
+            <ul class="dedication-list">
+                <li><span style="font-size: 1.5rem;">⭐</span> <span class="dedication-gold-name">غلا نبيل عبدالقادر</span></li>
+                <li><span style="font-size: 1.5rem;">⭐</span> <span class="dedication-gold-name">حلا نبيل عبدالقادر</span></li>
+                <li><span style="font-size: 1.5rem;">⭐</span> <span class="dedication-gold-name">عبدالقادر نبيل عبدالقادر</span></li>
+            </ul>
+        </div>
+    </section>
+
+    <footer>
+        <p>جميع الحقوق محفوظة © منصة بلبل التعليمية (حيث يغرد العلم) | إعداد: Nabil Abdelgadir</p>
+    </footer>
+
+    <script>
+        let slideIndex = 0;
+        const slides = document.querySelectorAll('.slide');
+        
+        function showSlides() {
+            if (slides.length > 0) {
+                slides.forEach(s => s.classList.remove('active'));
+                slideIndex = (slideIndex + 1) % slides.length;
+                slides[slideIndex].classList.add('active');
+            }
+        }
+        
+        if(slides.length > 0) {
+            setInterval(showSlides, 4500);
+        }
+    </script>
+</body>
+</html>
