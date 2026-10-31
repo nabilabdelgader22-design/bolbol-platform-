@@ -22,7 +22,6 @@
         .card { background: #1e293b; padding: 30px; border-radius: 15px; border: 1px solid #334155; border-top: 5px solid #fbbf24; margin-top: 20px; text-align: right; }
         .card h3 { color: #fbbf24; font-size: 1.8rem; margin-bottom: 18px; }
         
-        /* توحيد مقاسات وأبعاد جميع الأزرار والتبويبات لتكون متطابقة تماماً */
         .card-buttons-vertical { display: flex; flex-direction: column; gap: 14px; margin-top: 22px; }
         .action-btn-yellow, .action-btn-red {
             display: flex;
@@ -51,4 +50,232 @@
         .quiz-question { font-size: 1.35rem; color: #fbbf24; margin-bottom: 15px; }
         .quiz-option-btn { background: #1e293b; color: #fff; border: 2px solid #334155; width: 100%; padding: 14px; border-radius: 8px; font-size: 1.15rem; margin-bottom: 10px; cursor: pointer; text-align: right; }
         .correct { background-color: #22c55e !important; color: #fff !important; }
-        .wrong { background-color: #ef4444 !important; color: #
+        .wrong { background-color: #ef4444 !important; color: #fff !important; }
+        .quiz-result { font-size: 1.3rem; margin-top: 15px; text-align: center; }
+        
+        .video-box { position: relative; padding-bottom: 56.25%; height: 0; background: #000; border-radius: 10px; margin-top: 15px; }
+        .video-box iframe { position: absolute; width: 100%; height: 100%; border: 0; }
+        .live-buttons { display: flex; justify-content: center; gap: 15px; margin-top: 20px; flex-wrap: wrap; }
+        .live-btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; height: 50px; padding: 0 25px; border-radius: 10px; text-decoration: none; color: #fff; font-size: 1.15rem; flex: 1 1 160px; }
+        .youtube-live { background-color: #ef4444; }
+        .facebook-live { background-color: #1877f2; }
+        
+        .dedication-section { background: #080808; border: 2px solid #F5C542; border-radius: 20px; padding: 40px 20px; margin: 40px auto; text-align: center; }
+        .dedication-intro { color: #f1f5f9; font-size: 1.5rem; margin-bottom: 15px; }
+        .dedication-gold-name { color: #F5C542; font-size: 2.5rem; font-family: 'Amiri', serif; }
+        footer { background: #0b1120; padding: 25px; color: #cbd5e1; margin-top: 40px; font-size: 1.1rem; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>منصة بلبل التعليمية</h1>
+        <h2 class="subtitle">Bolbol Educational Platform</h2>
+    </header>
+
+    <div class="slider-container">
+        <div class="slide active">🏫 أبواب المجد تنتظر خطاكم.. هاهنا تُصنع طموحات المستقبل.</div>
+        <div class="slide">📚 فصول دراسية نابضة بالحياة، حيث يُصاغ الفهم العميق للعلوم.</div>
+        <div class="slide">💡 انهل من ينابيع المعرفة الصافية في الرياضيات والفيزياء.</div>
+        <div class="slide">👨‍🏫 إشراف وتأسيس الأستاذ: Nabil Abdelgadir نحو قمة النجاح.</div>
+    </div>
+
+    <!-- الفيديو الإعلاني للمنصة بعد العرض التقديمي مباشرة -->
+    <section>
+        <div class="card">
+            <h3><i class="fas fa-bullhorn" style="color: #fbbf24;"></i> الفيديو الإعلاني لمنصة بلبل التعليمية</h3>
+            <p style="margin-bottom: 12px; font-size: 1.1rem; color: #cbd5e1;">شاهد الفيديو الإعلاني للتعرف على خدمات المنصة:</p>
+            <div class="video-box">
+                <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="card" style="text-align: center;">
+            <img src="https://i.postimg.cc/5Nf4VVLb/1768680691664.png" alt="صورة الأستاذ Nabil" class="profile-img">
+            <h3 style="justify-content: center; color: #fbbf24;">السيرة الذاتية - الأستاذ Nabil Abdelgadir</h3>
+            <p style="margin-bottom: 10px;">مكان الميلاد: السودان - الولاية الشمالية - دنقلا - سورتود - حي قيس مري.</p>
+            <p>معلم خبير في تدريس وتطوير المناهج الدراسية لمادتّي الفيزياء والرياضيات.</p>
+        </div>
+    </section>
+
+    <!-- قسم الرياضيات -->
+    <section id="math-section">
+        <h2 class="section-title">قسم الرياضيات</h2>
+        <div class="card">
+            <h3>خدمات مادة الرياضيات</h3>
+            <div class="card-buttons-vertical">
+                <a href="https://drive.google.com/drive/folders/1xuCEOYAt6dFokR-DQ0KDKXmn-Yn2ifg5" target="_blank" class="action-btn-yellow"><i class="fas fa-book-open"></i> قراءة مذكرات الرياضيات</a>
+                <a href="https://drive.google.com/drive/folders/1xuCEOYAt6dFokR-DQ0KDKXmn-Yn2ifg5" target="_blank" class="action-btn-red"><i class="fas fa-download"></i> تحميل مذكرات الرياضيات</a>
+                <a href="https://drive.google.com/drive/folders/1xuCEOYAt6dFokR-DQ0KDKXmn-Yn2ifg5" target="_blank" class="action-btn-yellow"><i class="fas fa-file-signature"></i> قراءة امتحانات الرياضيات</a>
+                <a href="https://drive.google.com/drive/folders/1xuCEOYAt6dFokR-DQ0KDKXmn-Yn2ifg5" target="_blank" class="action-btn-red"><i class="fas fa-file-download"></i> تحميل امتحانات الرياضيات</a>
+                <a href="https://drive.google.com/drive/folders/1xuCEOYAt6dFokR-DQ0KDKXmn-Yn2ifg5" target="_blank" class="action-btn-yellow"><i class="fas fa-scroll"></i> قراءة أوراق عمل الرياضيات</a>
+                <a href="https://drive.google.com/drive/folders/1xuCEOYAt6dFokR-DQ0KDKXmn-Yn2ifg5" target="_blank" class="action-btn-red"><i class="fas fa-file-pdf"></i> تحميل أوراق عمل الرياضيات</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <h3>اختبار تفاعلي - رياضيات</h3>
+            <div class="quiz-box">
+                <div class="quiz-question">س: ما هو تفاضل الدالة ص = س تربيع ؟</div>
+                <button class="quiz-option-btn" onclick="verifyAns(this, false, 'm-res')">أ) س</button>
+                <button class="quiz-option-btn" onclick="verifyAns(this, true, 'm-res')">ب) 2س</button>
+                <button class="quiz-option-btn" onclick="verifyAns(this, false, 'm-res')">ج) 2</button>
+                <div id="m-res" class="quiz-result"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم الفيزياء -->
+    <section id="physics-section">
+        <h2 class="section-title">قسم الفيزياء</h2>
+        <div class="card">
+            <h3>خدمات مادة الفيزياء</h3>
+            <div class="card-buttons-vertical">
+                <a href="https://drive.google.com/drive/folders/15F3QOP2t8RAFHRV4yYzqvx04vUuHl40E" target="_blank" class="action-btn-yellow"><i class="fas fa-book-open"></i> قراءة مذكرات الفيزياء</a>
+                <a href="https://drive.google.com/drive/folders/15F3QOP2t8RAFHRV4yYzqvx04vUuHl40E" target="_blank" class="action-btn-red"><i class="fas fa-download"></i> تحميل مذكرات الفيزياء</a>
+                <a href="https://drive.google.com/drive/folders/15F3QOP2t8RAFHRV4yYzqvx04vUuHl40E" target="_blank" class="action-btn-yellow"><i class="fas fa-file-signature"></i> قراءة امتحانات الفيزياء</a>
+                <a href="https://drive.google.com/drive/folders/15F3QOP2t8RAFHRV4yYzqvx04vUuHl40E" target="_blank" class="action-btn-red"><i class="fas fa-file-download"></i> تحميل امتحانات الفيزياء</a>
+                <a href="https://drive.google.com/drive/folders/15F3QOP2t8RAFHRV4yYzqvx04vUuHl40E" target="_blank" class="action-btn-yellow"><i class="fas fa-scroll"></i> قراءة أوراق عمل الفيزياء</a>
+                <a href="https://drive.google.com/drive/folders/15F3QOP2t8RAFHRV4yYzqvx04vUuHl40E" target="_blank" class="action-btn-red"><i class="fas fa-file-pdf"></i> تحميل أوراق عمل الفيزياء</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <h3>اختبار تفاعلي - فيزياء</h3>
+            <div class="quiz-box">
+                <div class="quiz-question">س: وحدة قياس الشغل والطاقة في النظام الدولي هي؟</div>
+                <button class="quiz-option-btn" onclick="verifyAns(this, false, 'p-res')">أ) نيوتن</button>
+                <button class="quiz-option-btn" onclick="verifyAns(this, true, 'p-res')">ب) جول</button>
+                <button class="quiz-option-btn" onclick="verifyAns(this, false, 'p-res')">ج) وات</button>
+                <div id="p-res" class="quiz-result"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- مكتبة الكتب والامتحانات وأوراق العمل للمراحل الثلاث -->
+    <section id="books-section">
+        <h2 class="section-title">مكتبة الكتب والامتحانات وأوراق العمل</h2>
+        
+        <!-- مرحلة الأساس -->
+        <div class="card">
+            <h3>مرحلة الأساس</h3>
+            <div class="card-buttons-vertical">
+                <a href="https://drive.google.com/drive/folders/1oHDjzWcZtAtEsdqa83HOddZ2mKtZneQ0" target="_blank" class="action-btn-yellow"><i class="fas fa-book-open"></i> قراءة كتب الأساس</a>
+                <a href="https://drive.google.com/drive/folders/1oHDjzWcZtAtEsdqa83HOddZ2mKtZneQ0" target="_blank" class="action-btn-red"><i class="fas fa-download"></i> تحميل كتب الأساس</a>
+                <a href="https://drive.google.com/drive/folders/1oHDjzWcZtAtEsdqa83HOddZ2mKtZneQ0" target="_blank" class="action-btn-yellow"><i class="fas fa-file-signature"></i> قراءة امتحانات الأساس</a>
+                <a href="https://drive.google.com/drive/folders/1oHDjzWcZtAtEsdqa83HOddZ2mKtZneQ0" target="_blank" class="action-btn-red"><i class="fas fa-file-download"></i> تحميل امتحانات الأساس</a>
+                <a href="https://drive.google.com/drive/folders/1oHDjzWcZtAtEsdqa83HOddZ2mKtZneQ0" target="_blank" class="action-btn-yellow"><i class="fas fa-scroll"></i> قراءة أوراق عمل الأساس</a>
+                <a href="https://drive.google.com/drive/folders/1oHDjzWcZtAtEsdqa83HOddZ2mKtZneQ0" target="_blank" class="action-btn-red"><i class="fas fa-file-pdf"></i> تحميل أوراق عمل الأساس</a>
+            </div>
+        </div>
+
+        <!-- المرحلة المتوسطة -->
+        <div class="card">
+            <h3>المرحلة المتوسطة</h3>
+            <div class="card-buttons-vertical">
+                <a href="https://drive.google.com/drive/folders/1IKOM6Flo5TAeZhQOVk2aykE5cYGlBekP" target="_blank" class="action-btn-yellow"><i class="fas fa-book-open"></i> قراءة كتب المتوسطة</a>
+                <a href="https://drive.google.com/drive/folders/1IKOM6Flo5TAeZhQOVk2aykE5cYGlBekP" target="_blank" class="action-btn-red"><i class="fas fa-download"></i> تحميل كتب المتوسطة</a>
+                <a href="https://drive.google.com/drive/folders/1IKOM6Flo5TAeZhQOVk2aykE5cYGlBekP" target="_blank" class="action-btn-yellow"><i class="fas fa-file-signature"></i> قراءة امتحانات المتوسطة</a>
+                <a href="https://drive.google.com/drive/folders/1IKOM6Flo5TAeZhQOVk2aykE5cYGlBekP" target="_blank" class="action-btn-red"><i class="fas fa-file-download"></i> تحميل امتحانات المتوسطة</a>
+                <a href="https://drive.google.com/drive/folders/1IKOM6Flo5TAeZhQOVk2aykE5cYGlBekP" target="_blank" class="action-btn-yellow"><i class="fas fa-scroll"></i> قراءة أوراق عمل المتوسطة</a>
+                <a href="https://drive.google.com/drive/folders/1IKOM6Flo5TAeZhQOVk2aykE5cYGlBekP" target="_blank" class="action-btn-red"><i class="fas fa-file-pdf"></i> تحميل أوراق عمل المتوسطة</a>
+            </div>
+        </div>
+
+        <!-- المرحلة الثانوية -->
+        <div class="card">
+            <h3>المرحلة الثانوية</h3>
+            <div class="card-buttons-vertical">
+                <a href="https://drive.google.com/drive/folders/1mEUNW5GDovt1q6hhxJv-9GGzoeEs_JL6" target="_blank" class="action-btn-yellow"><i class="fas fa-book-open"></i> قراءة كتب الثانوي</a>
+                <a href="https://drive.google.com/drive/folders/1mEUNW5GDovt1q6hhxJv-9GGzoeEs_JL6" target="_blank" class="action-btn-red"><i class="fas fa-download"></i> تحميل كتب الثانوي</a>
+                <a href="https://drive.google.com/drive/folders/1mEUNW5GDovt1q6hhxJv-9GGzoeEs_JL6" target="_blank" class="action-btn-yellow"><i class="fas fa-file-signature"></i> قراءة امتحانات الثانوي</a>
+                <a href="https://drive.google.com/drive/folders/1mEUNW5GDovt1q6hhxJv-9GGzoeEs_JL6" target="_blank" class="action-btn-red"><i class="fas fa-file-download"></i> تحميل امتحانات الثانوي</a>
+                <a href="https://drive.google.com/drive/folders/1mEUNW5GDovt1q6hhxJv-9GGzoeEs_JL6" target="_blank" class="action-btn-yellow"><i class="fas fa-scroll"></i> قراءة أوراق عمل الثانوي</a>
+                <a href="https://drive.google.com/drive/folders/1mEUNW5GDovt1q6hhxJv-9GGzoeEs_JL6" target="_blank" class="action-btn-red"><i class="fas fa-file-pdf"></i> تحميل أوراق عمل الثانوي</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم الدروس المسجلة والبث المباشر -->
+    <section id="media-section">
+        <h2 class="section-title">قسـم الدروس المسجلة والبث</h2>
+
+        <!-- تبويب الدروس المسجلة -->
+        <div class="card">
+            <h3><i class="fas fa-chalkboard-teacher" style="color: #ef4444;"></i> تبويب الدروس المسجلة</h3>
+            <p style="margin-bottom: 12px; font-size: 1.1rem; color: #cbd5e1;">مكتبة الحصص والشرح المرئي المسجل للطلاب:</p>
+            <div class="video-box">
+                <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe>
+            </div>
+        </div>
+
+        <!-- قاعة البث المباشر -->
+        <div class="card">
+            <h3><i class="fas fa-broadcast-tower" style="color: #fbbf24;"></i> قاعة البث المباشر (يوتيوب وفيسبوك)</h3>
+            <p style="margin-bottom: 12px; font-size: 1.1rem; color: #cbd5e1;">تابع معنا الحصص المباشرة لحظة بلحظة:</p>
+            <div class="video-box">
+                <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe>
+            </div>
+            <div class="live-buttons">
+                <a href="https://www.youtube.com" target="_blank" class="live-btn youtube-live"><i class="fab fa-youtube"></i> بث يوتيوب المباشر</a>
+                <a href="https://www.facebook.com" target="_blank" class="live-btn facebook-live"><i class="fab fa-facebook"></i> بث فيسبوك المباشر</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- الإهداء الخاص -->
+    <section id="dedication">
+        <div class="dedication-section">
+            <p class="dedication-intro">إهداءٌ إلى نبع الحنان.. أمي الغالية</p>
+            <h1 class="dedication-gold-name">نفيسة محمود أحمد حاج</h1>
+            <div style="height: 2px; background: #F5C542; margin: 20px auto; width: 60%;"></div>
+            <p class="dedication-intro">وإلى قرّة العين والروح.. أبنائي الأحباء:</p>
+            <p style="color: #F5C542; font-size: 1.8rem; margin: 10px 0;">⭐ غلا نبيل عبدالقادر</p>
+            <p style="color: #F5C542; font-size: 1.8rem; margin: 10px 0;">⭐ حلا نبيل عبدالقادر</p>
+            <p style="color: #F5C542; font-size: 1.8rem; margin: 10px 0;">⭐ عبدالقادر نبيل عبدالقادر</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>جميع الحقوق محفوظة © منصة بلبل التعليمية | إعداد: Nabil Abdelgadir</p>
+    </footer>
+
+    <script>
+        let slideIndex = 0;
+        const slides = document.querySelectorAll('.slide');
+        function rotateSlides() {
+            if (slides.length > 0) {
+                slides.forEach(s => s.classList.remove('active'));
+                slideIndex = (slideIndex + 1) % slides.length;
+                slides[slideIndex].classList.add('active');
+            }
+        }
+        if (slides.length > 0) {
+            setInterval(rotateSlides, 4500);
+        }
+
+        function verifyAns(btn, isCorrect, resId) {
+            const parent = btn.parentElement;
+            const buttons = parent.getElementsByClassName('quiz-option-btn');
+            const res = document.getElementById(resId);
+            for(let b of buttons) { b.disabled = true; }
+            if(isCorrect) {
+                btn.classList.add('correct');
+                res.style.color = '#22c55e';
+                res.innerHTML = 'إجابة صحيحة وموفقة! 🌟';
+            } else {
+                btn.classList.add('wrong');
+                res.style.color = '#ef4444';
+                res.innerHTML = 'إجابة خاطئة 💪';
+                for(let b of buttons) {
+                    if(b.getAttribute('onclick').includes('true')) {
+                        b.classList.add('correct');
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+</html>
