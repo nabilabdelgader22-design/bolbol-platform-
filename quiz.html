@@ -36,7 +36,7 @@
             padding-bottom: 20px;
             margin-bottom: 30px;
         }
-        .logo-img {
+        .profile-img {
             width: 140px;
             height: 140px;
             border-radius: 50%;
@@ -44,7 +44,7 @@
             margin-bottom: 15px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.5);
             object-fit: cover;
-            background-color: #ffffff;
+            background-color: #0b132b;
         }
         .header h1 {
             color: #e0a96d;
@@ -132,146 +132,3 @@
         }
         #result-box h2 {
             color: #e0a96d;
-            font-size: 2.2rem;
-            margin-bottom: 12px;
-        }
-        #result-box p {
-            font-size: 1.6rem;
-            color: #ffffff;
-        }
-        .restart-btn {
-            background: #e0a96d;
-            color: #0b132b;
-            border: none;
-            padding: 14px 30px;
-            border-radius: 12px;
-            font-size: 1.3rem;
-            font-weight: 900;
-            cursor: pointer;
-            margin-top: 20px;
-            display: inline-block;
-        }
-        .platform-footer {
-            text-align: center;
-            margin-top: 35px;
-            padding-top: 20px;
-            border-top: 2px dashed #3a506b;
-            color: #e0a96d;
-            font-size: 1.35rem;
-        }
-    </style>
-</head>
-<body>
-
-<div class="quiz-container">
-    <div class="header">
-        <!-- تم تعديل رابط الشعار ليعمل بشكل مباشر وصحيح -->
-        <img src="https://raw.githubusercontent.com/nabilabelgader22-design/bolbol-platform-/main/logo.jpg" alt="شعار منصة بلبل التعليمية" class="logo-img">
-        <h1><i class="fas fa-square-root-variable"></i> اختبار تفاعلي: صور العناصر في الدوال</h1>
-        <p>إعداد: نبيل | منصة بلبل التعليمية</p>
-    </div>
-
-    <div id="result-box">
-        <h2><i class="fas fa-trophy"></i> نتيجة الاختبار التفاعلي</h2>
-        <p id="score-text"></p>
-        <button class="restart-btn" onclick="location.reload()"><i class="fas fa-redo"></i> إعادة الاختبار</button>
-    </div>
-
-    <form id="quizForm">
-        <div id="questions-list"></div>
-        <button type="button" class="submit-btn" id="sub-btn" onclick="calculateScore()"><i class="fas fa-check-circle"></i> إنهاء الاختبار وإظهار النتيجة</button>
-    </form>
-
-    <div class="platform-footer">
-        منصة بلبل طريقك الموثوق للتفوق 🦅✨
-    </div>
-</div>
-
-<script>
-    const questions = [
-        { q: "١. إذا كانت د(س) = ٥س - ٣، فإن صورة العنصر ٢ بالدالة د هي:", options: ["٧", "١٣", "٣", "-٧"], correct: 0 },
-        { q: "٢. إذا كانت د(س) = ٧ (دالة ثابتة)، فإن قيمة د(-٥) تساوي:", options: ["-٥", "٧", "-٧", "صفر"], correct: 1 },
-        { q: "٣. الدالة د(س) = س² - ٤س + ٣، فإن د(٣) تساوي:", options: ["٦", "-٣", "صفر", "١"], correct: 2 },
-        { q: "٤. إذا كانت الدالة الجذرية د(س) = √(س + ٩)، فإن د(١٦) تساوي:", options: ["٥", "٢٥", "± ٥", "٤"], correct: 0 },
-        { q: "٥. الدالة الكسرية د(س) = (س + ٥) / (س - ٢)، فإن صورة العنصر ٤ هي:", options: ["٩ / ٦", "٩ / ٢", "٩", "غير معرفة"], correct: 1 },
-        { q: "٦. في الدالة د(س) = (٢س + ١) / (س - ٣)، تكون قيمة د(٣) هي:", options: ["٧", "صفر", "غير معرفة (غير موجودة)", "١"], correct: 2 },
-        { q: "٧. إذا كانت دالة المقياس د(س) = |س - ٧|، فإن د(٢) تساوي:", options: ["-٥", "٥", "٩", "-٩"], correct: 1 },
-        { q: "٨. إذا كانت د(س) = س³ - ٢، فإن د(-٢) تساوي:", options: ["-١٠", "-٦", "٦", "١٠"], correct: 0 },
-        { q: "٩. إذا كانت د(س) = ٤ لكل س ∈ R، فإن د(١٠) + د(-١٠) تساوي:", options: ["صفر", "٤", "٨", "٢٠"], correct: 2 },
-        { q: "١٠. الدالة د(س) = √(٢٥ - س²)، فإن صورة العنصر -٣ هي:", options: ["١٦", "٤", "-٤", "± ٤"], correct: 1 },
-        { q: "١١. إذا كانت د(س) = (س² - ٩) / (س + ٣)، فإن د(٣) تساوي:", options: ["صفر", "٦", "غير معرفة", "-٦"], correct: 0 },
-        { q: "١٢. إذا كانت د(س) = ٥ - س²، فإن د(√٣) تساوي:", options: ["٢", "٨", "٥ - √٣", "-√٣"], correct: 0 },
-        { q: "١٣. إذا كانت د(س) = ٤^س (دالة أسية)، فإن د(١/٢) تساوي:", options: ["٢", "١/٢", "١٦", "٨"], correct: 0 },
-        { q: "١٤. إذا كانت د(س) = |س| + ٣، فإن د(-٤) تساوي:", options: ["-١", "١", "٧", "-٧"], correct: 2 },
-        { q: "١٥. إذا كانت د(س) = { ٢س + ١ عندما س > ٠ ، ٥ عندما س ≤ ٠ }، فإن د(-٣) تساوي:", options: ["-٥", "٥", "-٦", "١"], correct: 1 }
-    ];
-
-    function toEasternArabic(num) {
-        const arabicDigits = ['٠', '١', '٢', '٣', '٤', '٥', '٦', '٧', '٨', '٩'];
-        return num.toString().replace(/\d/g, d => arabicDigits[d]);
-    }
-
-    const listContainer = document.getElementById("questions-list");
-
-    questions.forEach((q, qIndex) => {
-        let card = document.createElement("div");
-        card.className = "question-card";
-        
-        let title = document.createElement("div");
-        title.className = "question-title";
-        title.innerText = q.q;
-        card.appendChild(title);
-
-        let optionsDiv = document.createElement("div");
-        optionsDiv.className = "options";
-        optionsDiv.id = `opt-group-${qIndex}`;
-
-        q.options.forEach((opt, optIndex) => {
-            let btn = document.createElement("div");
-            btn.className = "option-btn";
-            btn.id = `btn-${qIndex}-${optIndex}`;
-            btn.innerHTML = `<input type="radio" name="q${qIndex}" value="${optIndex}"> ${opt}`;
-            btn.onclick = () => {
-                let radios = document.getElementsByName(`q${qIndex}`);
-                radios[optIndex].checked = true;
-                let parent = btn.parentElement;
-                Array.from(parent.children).forEach(c => c.classList.remove("selected"));
-                btn.classList.add("selected");
-            };
-            optionsDiv.appendChild(btn);
-        });
-
-        card.appendChild(optionsDiv);
-        listContainer.appendChild(card);
-    });
-
-    function calculateScore() {
-        let score = 0;
-        questions.forEach((q, index) => {
-            let selected = document.querySelector(`input[name="q${index}"]:checked`);
-            let optionsGroup = document.getElementById(`opt-group-${index}`).children;
-            
-            optionsGroup[q.correct].classList.add("correct-ans");
-
-            if (selected) {
-                let selectedVal = parseInt(selected.value);
-                if (selectedVal === q.correct) {
-                    score++;
-                } else {
-                    optionsGroup[selectedVal].classList.add("wrong-ans");
-                }
-            }
-        });
-
-        document.getElementById("sub-btn").style.display = "none";
-        
-        let resultBox = document.getElementById("result-box");
-        resultBox.style.display = "block";
-        document.getElementById("score-text").innerText = `حصلت على ${toEasternArabic(score)} من أصل ${toEasternArabic(questions.length)} درجات!`;
-        
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
-</script>
-
-</body>
-</html>
